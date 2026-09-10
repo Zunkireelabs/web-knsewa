@@ -30,7 +30,7 @@ const valueVisuals: Record<string, { image: string; stat: string; statLabel: str
     statLabel: 'Safety Commitment',
   },
   innovation: {
-    image: '/images/project-galleries/project-1/Deerwalk-img1.jpg',
+    image: '/images/project-galleries/project-1/deerwalk-front-1.jpg',
     stat: '7',
     statLabel: 'Storey Complex',
   },

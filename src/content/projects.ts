@@ -20,8 +20,8 @@ export const allProjects: Project[] = [
       { question: 'What type of construction is this?', answer: 'This is a multi-storey RCC frame building — Basement + Ground Floor + 4 Upper Floors — designed for educational and institutional use in the Kathmandu Valley.' },
     ],
     images: {
-      thumbnail: '/images/projects/legacy/project-1.jpg',
-      featured: '/images/projects/legacy/project-1.jpg',
+      thumbnail: '/images/project-galleries/project-1/deerwalk-front-1.jpg',
+      featured: '/images/project-galleries/project-1/deerwalk-front-1.jpg',
       gallery: [],
     },
     seo: {
