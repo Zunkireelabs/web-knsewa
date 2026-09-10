@@ -4,7 +4,7 @@ export const contactPageContent: ContactPageContent = {
   seo: {
     title: 'Contact Us | Khushbu Nirman Sewa Pvt Ltd',
     description:
-      'Get in touch with Khushbu Nirman Sewa — Nepal\'s trusted construction partner for over 30 years. Headquartered in Biratnagar, Morang. Call 021-503204 or email khushbunirmansewa@gmail.com.',
+      'Get in touch with Khushbu Nirman Sewa — Nepal\'s trusted construction partner for over 30 years. Headquartered in Biratnagar, Morang. Call 021-503204 or email info@knsewa.com.',
     keywords: [
       'contact knsewa',
       'khushbu nirman sewa contact',
@@ -55,12 +55,20 @@ export const contactPageContent: ContactPageContent = {
       name: 'Khushbu Nirman Sewa Pvt Ltd — Headquarters',
       address: 'Biratnagar, Morang, Nepal',
       phone: '021-503204',
-      email: 'khushbunirmansewa@gmail.com',
+      email: 'info@knsewa.com',
       hours: 'Open 7 days a week (excluding major holidays)',
       mapUrl: 'https://goo.gl/maps/sg2w3MH4rkkGv8hNA',
       mapEmbedUrl:
         'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3565.1!2d87.2718!3d26.4525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBiratnagar%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000',
       isHeadquarters: true,
+    },
+    {
+      id: 'kathmandu-office',
+      name: 'Khushbu Nirman Sewa Pvt Ltd — Kathmandu Office',
+      address: 'Kathmandu, Nepal',
+      phone: '+977 9812312514',
+      email: 'info@knsewa.com',
+      isHeadquarters: false,
     },
   ],
 
@@ -71,7 +79,7 @@ export const contactPageContent: ContactPageContent = {
       'Send them along with your inquiry — our estimating team can review and respond with a preliminary scope and timeline.',
     primaryCTA: {
       text: 'Email Us Directly',
-      href: 'mailto:khushbunirmansewa@gmail.com',
+      href: 'mailto:info@knsewa.com',
     },
     secondaryCTA: {
       text: 'Call 021-503204',

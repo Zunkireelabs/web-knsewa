@@ -184,10 +184,10 @@ export function ApproachSection({ label, headline, steps }: ApproachSectionProps
                   </span>
                   <div className="absolute inset-[-6px] rounded-full border border-[var(--color-accent)]/15" />
                 </div>
-                <h3 className="text-fs-19 lg:text-fs-24 font-medium leading-[1.2] text-white mb-4">
+                <h3 className="text-[1.1875rem] lg:text-[1.5rem] font-medium leading-[1.2] text-white mb-4">
                   {step.title}
                 </h3>
-                <p className="text-[14px] lg:text-fs-16 leading-[1.7] text-white/50 max-w-[280px]">
+                <p className="text-[14px] lg:text-[1rem] leading-[1.7] text-white/50 max-w-[280px]">
                   {step.description}
                 </p>
               </div>

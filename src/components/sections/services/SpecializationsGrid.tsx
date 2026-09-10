@@ -38,8 +38,8 @@ function SpecializationCard({ item }: { item: Specialization }) {
       {/* Default content — heading only, fades on desktop hover */}
       <div className="absolute bottom-0 left-0 right-0 lg:transition-opacity lg:duration-300 lg:group-hover:opacity-0" style={{ padding: '20px' }}>
         <h3
-          className="font-medium text-white lg:text-fs-24"
-          style={{ fontSize: '1.125rem', lineHeight: 1.2 }}
+          className="font-medium text-white text-[1.125rem] lg:text-[1.5rem]"
+          style={{ lineHeight: 1.2 }}
         >
           {item.title}
         </h3>
@@ -55,7 +55,7 @@ function SpecializationCard({ item }: { item: Specialization }) {
           padding: '24px',
         }}
       >
-        <h3 className="text-white text-fs-24 font-medium leading-[1.2] mb-3">
+        <h3 className="text-white fs-24 font-medium leading-[1.2] mb-3">
           {item.title}
         </h3>
         <p className="text-white/80 text-[14px] leading-[1.6]" style={{ marginBottom: item.bullets?.length ? '14px' : 0 }}>

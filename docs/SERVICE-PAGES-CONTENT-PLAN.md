@@ -91,7 +91,7 @@ All four pages launch using images already in the repo — no new photography re
 - **Headline:** Have a site, a brief, or just a question?
 - **Description:** Send us what you have — sketches, a location, or a few lines about what you're planning. Our estimating team will respond within one business day with a preliminary scope.
 - **Primary CTA:** Request a Site Visit → `/contact`
-- **Secondary CTA:** Email Us Directly → `mailto:khushbunirmansewa@gmail.com`
+- **Secondary CTA:** Email Us Directly → `mailto:info@knsewa.com`
 
 ### Suggested supporting content (future rounds)
 - Q&A with the Deerwalk project manager

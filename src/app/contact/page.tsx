@@ -32,7 +32,7 @@ export default function ContactPage() {
     "name": "Khushbu Nirman Sewa Pvt Ltd",
     "url": "https://knsewa.com",
     "telephone": "021-503204",
-    "email": "khushbunirmansewa@gmail.com",
+    "email": "info@knsewa.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Biratnagar, Morang",
