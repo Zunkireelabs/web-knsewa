@@ -153,10 +153,21 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                 </span>
               </div>
               {settings.additionalLocations?.map((location) => (
-                <div className="flex items-start gap-3 text-[var(--color-gray-600)]" key={location}>
-                  <MapPinIcon className="w-5 h-5 mt-0.5" />
-                  <span>{location}</span>
-                </div>
+                <React.Fragment key={location.label}>
+                  <div className="flex items-start gap-3 text-[var(--color-gray-600)]">
+                    <MapPinIcon className="w-5 h-5 mt-0.5" />
+                    <span>{location.label}</span>
+                  </div>
+                  {location.phone && (
+                    <a
+                      href={`tel:${location.phone}`}
+                      className="flex items-center gap-3 text-[var(--color-gray-600)] hover:text-[var(--color-primary)] transition-colors"
+                    >
+                      <PhoneIcon className="w-5 h-5" />
+                      <span>{location.phone}</span>
+                    </a>
+                  )}
+                </React.Fragment>
               ))}
             </div>
 

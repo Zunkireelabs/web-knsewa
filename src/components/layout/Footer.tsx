@@ -57,10 +57,18 @@ export function Footer({ settings, navigation }: FooterProps) {
                 </span>
               </div>
               {settings.additionalLocations?.map((location) => (
-                <div className="footer-contact-item" key={location}>
-                  <MapPinIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  <span>{location}</span>
-                </div>
+                <React.Fragment key={location.label}>
+                  <div className="footer-contact-item">
+                    <MapPinIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    <span>{location.label}</span>
+                  </div>
+                  {location.phone && (
+                    <a href={`tel:${location.phone}`} className="footer-contact-item">
+                      <PhoneIcon className="w-5 h-5 flex-shrink-0" />
+                      <span>{location.phone}</span>
+                    </a>
+                  )}
+                </React.Fragment>
               ))}
             </div>
 

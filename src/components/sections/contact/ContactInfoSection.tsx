@@ -92,7 +92,7 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
                     onClick={() => setActiveOfficeId(office.id)}
                     className="office-switcher-tab"
                   >
-                    {office.isHeadquarters ? 'Headquarters' : office.address.split(',')[0]}
+                    {office.address.split(',')[0]}
                   </button>
                 ))}
               </div>

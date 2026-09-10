@@ -10,8 +10,8 @@ export interface SiteSettings {
     country: string;
   };
   // Additional office locations shown alongside the primary address (footer, contact panel).
-  // Kept as simple display strings — the primary `address` above remains the one used in SEO/JSON-LD.
-  additionalLocations?: string[];
+  // The primary `address` above remains the one used in SEO/JSON-LD.
+  additionalLocations?: { label: string; phone?: string }[];
   social: {
     facebook?: string;
     instagram?: string;

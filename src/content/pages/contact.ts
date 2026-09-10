@@ -66,7 +66,7 @@ export const contactPageContent: ContactPageContent = {
       id: 'kathmandu-office',
       name: 'Khushbu Nirman Sewa Pvt Ltd — Kathmandu Office',
       address: 'Kathmandu, Nepal',
-      // Phone number pending from client — omit until provided rather than show a placeholder.
+      phone: '+977 9812312514',
       email: 'info@knsewa.com',
       isHeadquarters: false,
     },

@@ -10,7 +10,7 @@ export const siteSettings: SiteSettings = {
     city: 'Biratnagar',
     country: 'Nepal',
   },
-  additionalLocations: ['Kathmandu, Nepal'],
+  additionalLocations: [{ label: 'Kathmandu, Nepal', phone: '+977 9812312514' }],
   social: {
     facebook: 'https://facebook.com/khushbunirman.sewa.1',
   },
