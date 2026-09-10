@@ -217,7 +217,7 @@ body {
 .para {
   font-weight: 400;
   line-height: 1.5;
-  text-align: justify;
+  text-align: left;
 }
 
 .section-label {
@@ -1239,15 +1239,15 @@ section {
 
 .services-header p,
 .services-text p {
-  text-align: justify;
+  text-align: left;
 }
 
 .culture-section p {
-  text-align: justify;
+  text-align: left;
 }
 
 .news-insights-section p {
-  text-align: justify;
+  text-align: left;
 }
 
 /* Right-side bento grid inside the 50%-wide news section — keeps 2 cols until mobile */
@@ -2845,7 +2845,7 @@ section {
   color: rgba(255,255,255,0.78);
   margin-bottom: 2.25rem;
   max-width: 440px;
-  text-align: justify;
+  text-align: left;
 }
 
 .cta-v2-actions {
@@ -3078,6 +3078,21 @@ section {
 
 .footer-social-link:hover {
   color: var(--color-white);
+}
+
+.share-bar-link {
+  color: var(--color-primary);
+  opacity: 0.55;
+  transition: opacity var(--transition-base), color var(--transition-base);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.share-bar-link:hover {
+  opacity: 1;
+  color: var(--color-accent);
 }
 
 .footer-bottom {
