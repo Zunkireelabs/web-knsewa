@@ -179,11 +179,12 @@ export default async function ArticlePage({
         <div className="max-w-[720px] mx-auto">
           <Link
             href="/insights/"
-            className="inline-flex items-center gap-2 fs-16 font-medium text-[var(--color-primary)] transition-colors mb-10 hover:text-[var(--color-white)] hover:bg-[var(--color-accent)]"
+            className="inline-flex items-center gap-2 fs-16 font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-white)] hover:bg-[var(--color-accent)]"
             style={{
               background: 'var(--color-gray-100)',
               padding: '0.5rem 1rem',
               borderRadius: '999px',
+              marginBottom: 'clamp(2rem, 4vw, 3rem)',
             }}
           >
             ← All Insights
