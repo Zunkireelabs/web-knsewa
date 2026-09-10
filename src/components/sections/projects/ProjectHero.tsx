@@ -44,7 +44,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
 
       <div
         className="wrapper prel w-full"
-        style={{ zIndex: 10, paddingBottom: '4rem', paddingTop: '8rem' }}
+        style={{ zIndex: 10, paddingBottom: '2.5rem', paddingTop: '8rem' }}
       >
         {/* Breadcrumbs */}
         <AnimatedElement>
@@ -84,10 +84,14 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                   alignItems: 'center',
                   gap: '0.375rem',
                   fontSize: '0.6875rem',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: project.status === 'running' ? '#34d399' : 'rgba(255,255,255,0.5)',
+                  letterSpacing: '0.1em',
+                  color: project.status === 'running' ? '#34d399' : 'var(--color-white)',
+                  background: 'rgba(23,23,27,0.55)',
+                  backdropFilter: 'blur(8px)',
+                  padding: '0.3rem 0.75rem',
+                  borderRadius: '2px',
                 }}
               >
                 <span
@@ -95,7 +99,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                     width: '6px',
                     height: '6px',
                     borderRadius: '50%',
-                    background: project.status === 'running' ? '#34d399' : 'rgba(255,255,255,0.4)',
+                    background: '#34d399',
                   }}
                 />
                 {project.status === 'running' ? 'In Progress' : 'Completed'}

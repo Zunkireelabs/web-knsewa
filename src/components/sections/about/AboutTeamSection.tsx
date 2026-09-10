@@ -23,7 +23,6 @@ export function AboutTeamSection({ label, headline, members }: AboutTeamSectionP
         background: 'var(--color-primary)',
         padding: 'clamp(5rem, 9vw, 9rem) 0',
         position: 'relative',
-        overflow: 'hidden',
       }}
     >
       <GridLines variant="light" />

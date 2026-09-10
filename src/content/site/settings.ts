@@ -32,10 +32,6 @@ export const mainNavigation: NavItem[] = [
     label: 'Insights',
     href: '/insights',
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
 ];
 
 export const footerNavigation: NavItem[] = [

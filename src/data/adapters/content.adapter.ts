@@ -16,6 +16,10 @@ import { servicesPageContent } from '@/content/pages/services';
 import { projectsPageContent } from '@/content/pages/projects';
 import { insightsPageContent, insightsArticles } from '@/content/pages/insights';
 import { contactPageContent } from '@/content/pages/contact';
+import { commercialServiceContent } from '@/content/pages/services/commercial';
+import { governmentServiceContent } from '@/content/pages/services/government';
+import { industrialServiceContent } from '@/content/pages/services/industrial';
+import { infrastructureServiceContent } from '@/content/pages/services/infrastructure';
 import type {
   SiteSettings,
   NavItem,
@@ -25,7 +29,6 @@ import type {
   ContactPageContent,
   CoveragePageContent,
   InsightsPageContent,
-  CareersPageContent,
   SafetyPageContent,
   SustainabilityPageContent,
   ServiceDetailContent,
@@ -81,10 +84,6 @@ export function getAllInsightsArticles(): NewsArticle[] {
   return insightsArticles;
 }
 
-export function getCareersPage(): CareersPageContent {
-  throw new Error('Careers page content not yet created.');
-}
-
 export function getSafetyPage(): SafetyPageContent {
   throw new Error('Safety page content not yet created.');
 }
@@ -120,20 +119,24 @@ export function getAllArticles(): NewsArticle[] {
   return homePageContent.news;
 }
 
-export function getArticleBySlug(slug: string): BlogPost | null {
-  // Will be implemented when full article content is created
-  return null;
+export function getArticleBySlug(slug: string): NewsArticle | null {
+  return insightsArticles.find((a) => a.slug === slug) ?? null;
 }
 
 // Services Detail
+const serviceContentMap: Record<string, ServiceDetailContent> = {
+  commercial: commercialServiceContent,
+  government: governmentServiceContent,
+  industrial: industrialServiceContent,
+  infrastructure: infrastructureServiceContent,
+};
+
 export function getServiceBySlug(slug: string): ServiceDetailContent | null {
-  // Will be implemented when service detail pages are created
-  return null;
+  return serviceContentMap[slug] ?? null;
 }
 
 export function getAllServiceSlugs(): string[] {
-  // Will be implemented when service detail pages are created
-  return [];
+  return Object.keys(serviceContentMap);
 }
 
 // Locations

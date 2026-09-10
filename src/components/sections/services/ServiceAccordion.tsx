@@ -75,11 +75,10 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
           </h2>
         </div>
 
-        {/* Expanding panels */}
+        {/* ── Desktop: horizontal expanding panels (1024px+) ── */}
         <div
-          className="panels-container"
+          className="panels-container hidden lg:flex"
           style={{
-            display: 'flex',
             gap: 4,
             height: 'clamp(360px, 50vh, 500px)',
             borderRadius: 16,
@@ -105,16 +104,13 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
                   textDecoration: 'none',
                 }}
               >
-                {/* Background image */}
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="50vw"
                 />
-
-                {/* Dark overlay */}
                 <div
                   style={{
                     position: 'absolute',
@@ -125,8 +121,6 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
                     transition: 'background 0.5s ease',
                   }}
                 />
-
-                {/* Content overlay */}
                 <div
                   style={{
                     position: 'absolute',
@@ -137,7 +131,6 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
                     padding: 'clamp(1.25rem, 2vw, 2rem)',
                   }}
                 >
-                  {/* Number */}
                   <span
                     style={{
                       position: 'absolute',
@@ -151,8 +144,6 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
                   >
                     {number}
                   </span>
-
-                  {/* Title — always visible */}
                   <h3
                     style={{
                       fontSize: isActive ? 'clamp(1.25rem, 1.8vw, 1.5rem)' : 'clamp(0.875rem, 1.2vw, 1.125rem)',
@@ -161,14 +152,10 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
                       color: 'white',
                       transition: 'font-size 0.5s ease',
                       writingMode: isActive ? 'horizontal-tb' : 'vertical-rl',
-                      textOrientation: isActive ? 'mixed' : 'mixed',
                     }}
-                    className={!isActive ? 'lg:writing-vertical' : ''}
                   >
                     {item.title}
                   </h3>
-
-                  {/* Description + CTA — only on active */}
                   <div
                     style={{
                       overflow: 'hidden',
@@ -193,7 +180,6 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
                     >
                       {item.description}
                     </p>
-
                     <div
                       style={{
                         display: 'flex',
@@ -218,6 +204,96 @@ export function ServiceAccordion({ label, headline, items }: ServiceAccordionPro
             );
           })}
         </div>
+
+      </div>
+
+      {/* ── Mobile: vertical sticky card stack — overlap from bottom (below 1024px) ── */}
+      <div className="lg:hidden" style={{ position: 'relative', padding: '0 1.25rem 3rem' }}>
+        {items.map((item, i) => {
+          const number = String(i + 1).padStart(2, '0');
+          return (
+            <Link
+              key={item.id}
+              href={item.href}
+              className="group"
+              style={{
+                display: 'block',
+                position: 'sticky',
+                top: `${i * 1.5}rem`,
+                zIndex: i + 1,
+                height: '72vh',
+                borderRadius: 16,
+                overflow: 'hidden',
+                textDecoration: 'none',
+              }}
+            >
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-700 group-active:scale-105"
+                sizes="100vw"
+              />
+              {/* Gradient overlay */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(23,23,27,0.85) 0%, rgba(23,23,27,0.2) 60%, rgba(23,23,27,0.1) 100%)',
+                }}
+              />
+              {/* Card content */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  padding: '2rem 1.75rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                }}
+              >
+                <span
+                  style={{
+                    display: 'block',
+                    fontSize: '0.6875rem',
+                    fontWeight: 500,
+                    letterSpacing: '0.12em',
+                    color: 'rgba(255,255,255,0.45)',
+                    marginBottom: '0.5rem',
+                    fontVariantNumeric: 'tabular-nums',
+                  }}
+                >
+                  {number}
+                </span>
+                <h3
+                  style={{
+                    fontSize: '1.375rem',
+                    fontWeight: 500,
+                    color: 'white',
+                    lineHeight: 1.2,
+                    marginBottom: '0.625rem',
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: '0.8125rem',
+                    lineHeight: 1.55,
+                    color: 'rgba(255,255,255,0.55)',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {item.description}
+                </p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

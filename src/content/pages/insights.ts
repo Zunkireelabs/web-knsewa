@@ -102,16 +102,6 @@ export const insightsArticles: NewsArticle[] = [
     slug: 'sustainable-building-practices',
   },
   {
-    id: 'news-safety-protocols',
-    title: 'New Safety Protocols for Construction Sites',
-    excerpt:
-      'Implementing world-class safety standards across all our project sites, ensuring zero-harm operations for every worker.',
-    category: 'Safety',
-    image: '/images/projects/project-3.jpg',
-    publishDate: '2024-01-05',
-    slug: 'new-safety-protocols',
-  },
-  {
     id: 'news-community-development',
     title: 'Community Development Through Construction',
     excerpt:
@@ -120,6 +110,16 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/projects/project-1.jpg',
     publishDate: '2023-12-28',
     slug: 'community-development',
+  },
+  {
+    id: 'news-safety-protocols',
+    title: 'New Safety Protocols for Construction Sites',
+    excerpt:
+      'Implementing world-class safety standards across all our project sites, ensuring zero-harm operations for every worker.',
+    category: 'Safety',
+    image: '/images/projects/project-3.jpg',
+    publishDate: '2024-01-05',
+    slug: 'new-safety-protocols',
   },
 ];
 
@@ -142,12 +142,19 @@ export const insightsPageContent: InsightsPageContent = {
     headline: 'Awards, News & Industry Insights',
     description:
       'Stay updated with our latest achievements, project milestones, and perspectives on Nepal\'s construction landscape.',
-    backgroundImage: '/images/services/banner.jpg',
+    backgroundImage: '/images/banners/awards-banner.jpg',
     breadcrumbs: [
       { label: 'Home', href: '/' },
       { label: 'Insights' },
     ],
   },
+
+  stats: [
+    { value: '30', label: 'Years of Excellence', suffix: '+' },
+    { value: '500', label: 'Projects Completed', suffix: '+' },
+    { value: '20', label: 'Awards & Recognition', suffix: '+' },
+    { value: '7', label: 'Provinces Served', suffix: '' },
+  ],
 
   listing: {
     label: 'LATEST',

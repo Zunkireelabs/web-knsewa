@@ -99,7 +99,7 @@ export function CTAPopupSection({ cards }: CTAPopupSectionProps) {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 flex flex-col justify-end min-h-[400px] lg:min-h-[500px] p-8 lg:p-12">
+              <div className="relative z-10 flex flex-col justify-end min-h-[240px] sm:min-h-[320px] lg:min-h-[500px] p-5 sm:p-8 lg:p-12">
                 {/* Icon */}
                 <div
                   className={`text-4xl mb-4 transition-all duration-500 ${
@@ -118,20 +118,20 @@ export function CTAPopupSection({ cards }: CTAPopupSectionProps) {
                   {card.title}
                 </h3>
 
-                {/* Description - Only visible on hover */}
+                {/* Description — always visible on mobile, hover-only on desktop */}
                 <p
-                  className={`text-white/80 mb-6 max-w-md transition-all duration-500 ${
-                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  className={`text-white/80 mb-4 max-w-md text-sm sm:text-base transition-all duration-500 ${
+                    isActive ? 'opacity-100 translate-y-0' : 'lg:opacity-0 lg:translate-y-4'
                   }`}
                 >
                   {card.description}
                 </p>
 
-                {/* CTA Link */}
+                {/* CTA Link — always visible on mobile, hover-only on desktop */}
                 <Link
                   href={card.cta.href}
                   className={`group/link inline-flex items-center gap-2 text-white font-medium transition-all duration-500 ${
-                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    isActive ? 'opacity-100 translate-y-0' : 'lg:opacity-0 lg:translate-y-4'
                   }`}
                 >
                   {card.cta.text}
@@ -158,18 +158,6 @@ export const defaultCTACards: CTACard[] = [
     cta: {
       text: 'Start Your Project',
       href: '/contact',
-    },
-  },
-  {
-    id: 'career',
-    icon: '👷',
-    title: 'A Career',
-    description:
-      'Join our team of dedicated professionals. We offer opportunities to grow, learn, and make an impact in the construction industry.',
-    image: '/images/projects/project-2.jpg',
-    cta: {
-      text: 'Explore Careers',
-      href: '/careers',
     },
   },
   {

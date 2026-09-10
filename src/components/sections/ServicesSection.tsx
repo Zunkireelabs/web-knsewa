@@ -34,20 +34,17 @@ export function ServicesSection({ headline, description, services }: ServicesSec
 
     const tl = gsap.timeline();
 
-    // Fade out current content
+    // Crossfade content
     tl.to([content, image], {
       opacity: 0,
-      y: 20,
-      duration: 0.3,
-      ease: 'power2.in',
+      duration: 0.2,
+      ease: 'power1.inOut',
     });
 
-    // Fade in new content
     tl.to([content, image], {
       opacity: 1,
-      y: 0,
-      duration: 0.5,
-      ease: 'power3.out',
+      duration: 0.35,
+      ease: 'power1.inOut',
     });
 
     return () => {
@@ -61,7 +58,7 @@ export function ServicesSection({ headline, description, services }: ServicesSec
 
       <div className="wrapper prel" style={{ zIndex: 10 }}>
         {/* Header */}
-        <div className="services-header">
+        <div className="services-header section-header">
           <AnimatedElement>
             <h2
               className="font-light"

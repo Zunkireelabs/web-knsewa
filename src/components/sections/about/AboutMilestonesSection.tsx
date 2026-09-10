@@ -16,6 +16,50 @@ interface AboutMilestonesSectionProps {
   items: TimelineItem[];
 }
 
+function MilestoneCard({ item, index, total, mobile = false }: { item: TimelineItem; index: number; total: number; mobile?: boolean }) {
+  return (
+    <div
+      className="milestone-card"
+      style={{
+        flexShrink: 0,
+        width: mobile ? 'min(75vw, 280px)' : 'clamp(280px, 22vw, 340px)',
+        scrollSnapAlign: mobile ? 'start' : undefined,
+        padding: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+        background: 'var(--color-white)',
+        border: '1px solid var(--color-gray-200)',
+        borderRadius: '16px',
+        position: 'relative',
+        overflow: 'hidden',
+        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+        cursor: 'default',
+        minHeight: '240px',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <div
+        className="milestone-accent"
+        style={{ position: 'absolute', top: 0, left: 0, width: '0%', height: '2px', background: 'var(--color-accent)', transition: 'width 0.4s ease' }}
+      />
+      <span
+        className="milestone-year"
+        style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', fontWeight: 200, lineHeight: 1, color: 'var(--color-gray-300)', display: 'block', marginBottom: 'clamp(1rem, 2vw, 2rem)', fontVariantNumeric: 'tabular-nums', transition: 'color 0.3s ease' }}
+      >
+        {item.year}
+      </span>
+      <h3 style={{ fontSize: 'clamp(0.875rem, 1.1vw, 1.0625rem)', fontWeight: 500, lineHeight: 1.3, color: 'var(--color-primary)', marginBottom: '0.75rem' }}>
+        {item.title}
+      </h3>
+      <p style={{ fontSize: '0.8125rem', fontWeight: 400, lineHeight: 1.65, color: 'var(--color-gray-500)', flex: 1 }}>
+        {item.description}
+      </p>
+      <span style={{ fontSize: '0.625rem', fontWeight: 500, color: 'var(--color-gray-300)', letterSpacing: '0.05em', fontVariantNumeric: 'tabular-nums', marginTop: '1.25rem' }}>
+        {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </span>
+    </div>
+  );
+}
+
 export function AboutMilestonesSection({ label, headline, items }: AboutMilestonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -97,23 +141,13 @@ export function AboutMilestonesSection({ label, headline, items }: AboutMileston
       ref={sectionRef}
       style={{
         background: 'var(--color-gray-100)',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
       <div style={{ padding: 'clamp(3rem, 5vw, 5rem) 0' }}>
         {/* Header */}
-        <div
-          style={{
-            paddingLeft: 'max(2rem, calc((100vw - 1440px) / 2 + 2rem))',
-            paddingRight: '2rem',
-            marginBottom: 'clamp(2.5rem, 4vw, 4rem)',
-          }}
-        >
+        <div className="mb-12 lg:mb-16" style={{ paddingLeft: 'max(2rem, calc((100vw - 1440px) / 2 + 2rem))', paddingRight: '2rem' }}>
           <AnimatedElement>
             <p
               style={{
@@ -144,8 +178,9 @@ export function AboutMilestonesSection({ label, headline, items }: AboutMileston
           </AnimatedElement>
         </div>
 
-        {/* Progress line */}
+        {/* Progress line — desktop only (part of GSAP scroll effect) */}
         <div
+          className="hidden lg:block"
           style={{
             height: '1px',
             background: 'var(--color-gray-200)',
@@ -168,8 +203,8 @@ export function AboutMilestonesSection({ label, headline, items }: AboutMileston
           />
         </div>
 
-        {/* Horizontal scroll track */}
-        <div ref={containerRef} style={{ overflow: 'hidden' }}>
+        {/* ── Desktop: GSAP horizontal scroll track (1024px+) ── */}
+        <div ref={containerRef} className="hidden lg:block" style={{ overflow: 'hidden' }}>
           <div
             ref={trackRef}
             className="milestones-track"
@@ -181,93 +216,85 @@ export function AboutMilestonesSection({ label, headline, items }: AboutMileston
             }}
           >
             {items.map((item, i) => (
-              <div
-                key={item.year}
-                className="milestone-card"
-                style={{
-                  flexShrink: 0,
-                  width: 'clamp(280px, 22vw, 340px)',
-                  padding: 'clamp(1.75rem, 2.5vw, 2.5rem)',
-                  background: 'var(--color-white)',
-                  border: '1px solid var(--color-gray-200)',
-                  borderRadius: '2px',
-                  position: 'relative',
-                  transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
-                  cursor: 'default',
-                  minHeight: '260px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-              >
-                {/* Accent top line */}
-                <div
-                  className="milestone-accent"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '0%',
-                    height: '2px',
-                    background: 'var(--color-accent)',
-                    transition: 'width 0.4s ease',
-                  }}
-                />
-
-                <span
-                  className="milestone-year"
-                  style={{
-                    fontSize: 'clamp(2rem, 3vw, 2.75rem)',
-                    fontWeight: 200,
-                    lineHeight: 1,
-                    color: 'var(--color-gray-300)',
-                    display: 'block',
-                    marginBottom: 'clamp(1.25rem, 2vw, 2rem)',
-                    fontVariantNumeric: 'tabular-nums',
-                    transition: 'color 0.3s ease',
-                  }}
-                >
-                  {item.year}
-                </span>
-
-                <h3
-                  style={{
-                    fontSize: 'clamp(0.9375rem, 1.1vw, 1.0625rem)',
-                    fontWeight: 500,
-                    lineHeight: 1.3,
-                    color: 'var(--color-primary)',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  style={{
-                    fontSize: 'clamp(0.8125rem, 0.9vw, 0.875rem)',
-                    fontWeight: 400,
-                    lineHeight: 1.65,
-                    color: 'var(--color-gray-500)',
-                    flex: 1,
-                  }}
-                >
-                  {item.description}
-                </p>
-
-                <span
-                  style={{
-                    fontSize: '0.625rem',
-                    fontWeight: 500,
-                    color: 'var(--color-gray-300)',
-                    letterSpacing: '0.05em',
-                    fontVariantNumeric: 'tabular-nums',
-                    marginTop: '1.5rem',
-                  }}
-                >
-                  {String(i + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-                </span>
-              </div>
+              <MilestoneCard key={item.year} item={item} index={i} total={items.length} />
             ))}
           </div>
+        </div>
+
+        {/* ── Mobile/tablet: vertical dot-and-line timeline (below 1024px) ── */}
+        <div
+          className="lg:hidden"
+          style={{ padding: '1.5rem 1.5rem 0', position: 'relative' }}
+        >
+          {/* Connecting line */}
+          <div style={{
+            position: 'absolute',
+            left: 'calc(1.5rem + 7px)',
+            top: 8,
+            bottom: 8,
+            width: '1px',
+            background: 'var(--color-accent)',
+            opacity: 0.25,
+          }} />
+
+          {items.map((item, i) => (
+            <div
+              key={item.year}
+              style={{
+                display: 'flex',
+                gap: '1.25rem',
+                paddingBottom: i < items.length - 1 ? '2rem' : 0,
+                position: 'relative',
+              }}
+            >
+              {/* Dot */}
+              <div style={{ flexShrink: 0, paddingTop: '4px' }}>
+                <div style={{
+                  width: '14px',
+                  height: '14px',
+                  borderRadius: '50%',
+                  background: 'var(--color-white)',
+                  border: '2px solid var(--color-accent)',
+                  position: 'relative',
+                  zIndex: 2,
+                  boxShadow: '0 0 0 3px var(--color-gray-100)',
+                }} />
+              </div>
+
+              {/* Content */}
+              <div style={{ flex: 1, paddingBottom: '0.25rem' }}>
+                <span style={{
+                  display: 'block',
+                  fontSize: '0.6875rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-accent)',
+                  marginBottom: '0.375rem',
+                  fontVariantNumeric: 'tabular-nums',
+                }}>
+                  {item.year}
+                </span>
+                <h3 style={{
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  lineHeight: 1.3,
+                  color: 'var(--color-primary)',
+                  marginBottom: '0.375rem',
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{
+                  fontSize: '0.875rem',
+                  fontWeight: 400,
+                  lineHeight: 1.65,
+                  color: 'var(--color-gray-500)',
+                }}>
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

@@ -2,7 +2,6 @@
 
 import React, { useRef, useEffect, useLayoutEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -16,6 +15,7 @@ export interface Specialization {
   title: string;
   tagline: string;
   description: string;
+  bullets?: string[];
   image: string;
   href: string;
 }
@@ -97,12 +97,11 @@ export function SpecializationsSection({
   return (
     <section
       ref={sectionRef}
-      className="specializations-section bg-white relative overflow-hidden"
-      style={{ minHeight: '100vh' }}
+      className="specializations-section bg-white relative"
     >
-      <div className="h-full flex flex-col justify-center py-16 lg:py-0">
-        {/* Section Header - 80px margin to content */}
-        <div style={{ marginBottom: '80px', paddingLeft: 'max(2rem, calc((100vw - 1440px) / 2 + 2rem))' }}>
+      {/* ── Desktop layout: pinned horizontal scroll (1024px+) ── */}
+      <div className="hidden lg:flex h-full flex-col">
+        <div style={{ marginBottom: '20px', paddingLeft: 'max(2rem, calc((100vw - 1440px) / 2 + 2rem))' }}>
           <h2
             className="font-light text-left"
             style={{
@@ -116,18 +115,37 @@ export function SpecializationsSection({
           </h2>
         </div>
 
-        {/* Cards Container with Horizontal Scroll */}
-        <div ref={triggerRef} className="relative overflow-hidden">
+        {/* overflow-x:clip clips horizontal scroll without constraining vertical height */}
+        <div ref={triggerRef} className="relative" style={{ overflowX: 'clip', overflowY: 'visible' }}>
           <div
             ref={cardsContainerRef}
             className="flex"
             style={{ paddingLeft: 'max(2rem, calc((100vw - 1440px) / 2 + 2rem))', paddingRight: '2rem', gap: '38px' }}
           >
             {specializations.map((spec) => (
-              <SpecializationCard
-                key={spec.id}
-                specialization={spec}
-              />
+              <SpecializationCard key={spec.id} specialization={spec} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Mobile / tablet layout: responsive grid (below 1024px) ── */}
+      <div className="lg:hidden" style={{ paddingTop: '2.5rem', paddingBottom: '3rem' }}>
+        <div className="wrapper">
+          <h2
+            className="font-light text-left mb-8"
+            style={{
+              fontSize: 'clamp(1.75rem, 6vw, 2.5rem)',
+              lineHeight: '1.1',
+              letterSpacing: '-0.01em',
+              color: 'var(--color-primary)',
+            }}
+          >
+            {title}
+          </h2>
+          <div className="flex flex-col gap-5">
+            {specializations.map((spec) => (
+              <SpecializationCard key={spec.id} specialization={spec} mobile />
             ))}
           </div>
         </div>
@@ -147,13 +165,77 @@ export function SpecializationsSection({
  */
 function SpecializationCard({
   specialization,
+  mobile = false,
 }: {
   specialization: Specialization;
+  mobile?: boolean;
 }) {
+  if (mobile) {
+    return (
+      <div
+        className="relative overflow-hidden rounded-2xl"
+        style={{ width: '100%', aspectRatio: '3/4' }}
+      >
+        <Image
+          src={specialization.image}
+          alt={specialization.title}
+          fill
+          className="object-cover"
+        />
+        {/* Always-visible gradient overlay with title + content */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, transparent 100%)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            padding: '20px',
+          }}
+        >
+          <h3
+            style={{
+              fontSize: '1.125rem',
+              fontWeight: 500,
+              lineHeight: 1.2,
+              color: 'var(--color-white)',
+              marginBottom: '0.25rem',
+            }}
+          >
+            {specialization.title}
+          </h3>
+          <p
+            style={{
+              fontSize: '0.75rem',
+              color: 'rgba(255,255,255,0.55)',
+              lineHeight: 1.4,
+              marginBottom: '0.625rem',
+            }}
+          >
+            {specialization.description}
+          </p>
+          {specialization.bullets && (
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '5px' }}>
+              {specialization.bullets.map((b) => (
+                <li
+                  key={b}
+                  style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '0.7rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.3 }}
+                >
+                  <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255,255,255,0.4)', flexShrink: 0 }} />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <Link
-      href={specialization.href}
-      className="group block flex-shrink-0 relative overflow-hidden rounded-2xl"
+    <div
+      className="group block flex-shrink-0 relative overflow-hidden rounded-2xl cursor-default"
       style={{ width: 'calc(25vw)', minWidth: '300px', maxWidth: '400px', aspectRatio: '3/4' }}
     >
       {/* Background Image */}
@@ -164,33 +246,36 @@ function SpecializationCard({
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
-      {/* Default: Title Label at Bottom (visible when not hovered) */}
-      <div className="absolute bottom-6 left-6 right-6 transition-opacity duration-300 group-hover:opacity-0">
-        <div
-          className="inline-block rounded-xl"
-          style={{ backgroundColor: 'var(--color-accent)', padding: '24px 24px', minHeight: '120px', display: 'flex', alignItems: 'center' }}
+      {/* Default: gradient + white title */}
+      <div className="absolute inset-x-0 bottom-0 transition-opacity duration-300 group-hover:opacity-0"
+        style={{
+          background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)',
+          borderBottomLeftRadius: '1rem',
+          borderBottomRightRadius: '1rem',
+          padding: 'clamp(28px, 6vw, 48px) 24px 24px',
+        }}
+      >
+        <h3
+          className="font-normal text-white"
+          style={{
+            fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)',
+            lineHeight: '1.3',
+          }}
         >
-          <h3
-            className="font-normal text-white"
-            style={{
-              fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)',
-              lineHeight: '1.3',
-            }}
-          >
-            {specialization.title}
-          </h3>
-        </div>
+          {specialization.title}
+        </h3>
       </div>
 
-      {/* Hover: Full Blue Overlay (hidden by default, appears on hover) */}
+      {/* Hover: soft blur + dark tint */}
       <div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-start"
         style={{
-          backgroundColor: 'var(--color-accent)',
+          background: 'rgba(0, 0, 0, 0.58)',
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
           padding: '32px 24px',
         }}
       >
-        {/* Title */}
         <h3
           className="font-normal text-white"
           style={{
@@ -201,41 +286,32 @@ function SpecializationCard({
         >
           {specialization.title}
         </h3>
-
-        {/* Description */}
         <p
-          className="text-white/90"
+          className="text-white/80"
           style={{
-            fontSize: 'clamp(0.875rem, 1.2vw, 1rem)',
+            fontSize: 'clamp(0.8rem, 1.1vw, 0.9rem)',
             lineHeight: '1.6',
-            marginBottom: '24px',
+            marginBottom: specialization.bullets?.length ? '14px' : '0',
           }}
         >
           {specialization.description}
         </p>
-
-        {/* CTA */}
-        <div className="mt-auto">
-          <span
-            className="inline-flex items-center gap-3 text-white font-medium uppercase tracking-wider"
-            style={{ fontSize: '0.75rem' }}
-          >
-            Learn More About {specialization.title}
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <line x1="2" y1="12" x2="20" y2="12" />
-              <polyline points="14,6 20,12 14,18" />
-            </svg>
-          </span>
-        </div>
+        {specialization.bullets && (
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '7px' }}>
+            {specialization.bullets.map((b) => (
+              <li
+                key={b}
+                className="text-white/75 flex items-center gap-2"
+                style={{ fontSize: 'clamp(0.75rem, 1vw, 0.8rem)', lineHeight: '1.4' }}
+              >
+                <span className="w-1 h-1 rounded-full bg-white/50 flex-shrink-0" />
+                {b}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -246,6 +322,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Building',
     tagline: 'Building the Future',
     description: 'We mold spaces that inspire, innovate, and endure.',
+    bullets: ['Residential & commercial complexes', 'Institutional & government buildings', 'Earthquake-resistant structures'],
     image: '/images/services/service1.jpg',
     href: '/services/building',
   },
@@ -254,6 +331,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Water Treatment & Sanitation',
     tagline: 'Sanctuaries of Well-being',
     description: 'Elevating living conditions with advanced water treatment and sanitation.',
+    bullets: ['Wastewater treatment plants', 'Sewerage & drainage systems', 'Community sanitation infrastructure'],
     image: '/images/services/service2.jpg',
     href: '/services/water-treatment',
   },
@@ -262,6 +340,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Road and Drain',
     tagline: 'Pathways of Progress',
     description: 'Crafting roads and drains that lead societies towards advancement.',
+    bullets: ['Urban & rural road construction', 'Stormwater drain networks', 'Pavement & bitumen works'],
     image: '/images/services/service3.jpg',
     href: '/services/road-drain',
   },
@@ -270,6 +349,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Airport',
     tagline: 'Taking Flight',
     description: 'Building gateways to possibilities with airport construction.',
+    bullets: ['Runway & apron construction', 'Terminal & hangar buildings', 'Taxiway & airfield works'],
     image: '/images/services/service4.jpg',
     href: '/services/airport',
   },
@@ -278,6 +358,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Irrigation',
     tagline: 'Nurturing Growth',
     description: 'Engineering irrigation solutions that nurture landscapes and livelihoods.',
+    bullets: ['Canal & headworks construction', 'Distribution network systems', 'Agricultural water management'],
     image: '/images/services/service5.jpg',
     href: '/services/irrigation',
   },
@@ -286,6 +367,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Energy',
     tagline: 'Powering Progress',
     description: 'Energizing growth through cutting-edge energy solutions.',
+    bullets: ['Hydropower civil works', 'Substation construction', 'Rural electrification infrastructure'],
     image: '/images/services/service6.jpg',
     href: '/services/energy',
   },
@@ -294,6 +376,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Water Supply',
     tagline: 'Fluid Connections',
     description: 'Ensuring communities thrive with efficient water supply networks.',
+    bullets: ['Distribution pipelines', 'Overhead reservoir construction', 'Intake & pump stations'],
     image: '/images/services/service-center.jpg',
     href: '/services/water-supply',
   },
@@ -302,6 +385,7 @@ export const defaultSpecializations: Specialization[] = [
     title: 'Bridge and Culvert',
     tagline: 'Bridges to Unity',
     description: 'Connecting hearts and places through bridges and culverts.',
+    bullets: ['RCC & steel bridges', 'Suspension footbridges', 'Box culverts & river crossings'],
     image: '/images/services/infrastructure.jpg',
     href: '/services/bridge-culvert',
   },

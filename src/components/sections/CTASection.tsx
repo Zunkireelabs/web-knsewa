@@ -104,13 +104,13 @@ export function CTASection({ content }: CTASectionProps) {
 
             <AnimatedElement delay={0.2}>
               <div className="cta-v2-actions">
-                <Link href={content.primaryCTA.href} className="btn-primary" style={{ padding: '14px 28px', fontSize: '0.875rem' }}>
+                <Link href={content.primaryCTA.href} className="btn-primary">
                   {content.primaryCTA.text}
                   <ArrowRight width={24} height={10} />
                 </Link>
 
                 {content.secondaryCTA && (
-                  <Link href={content.secondaryCTA.href} className="btn-link white" style={{ fontSize: '0.875rem' }}>
+                  <Link href={content.secondaryCTA.href} className="btn-link white">
                     {content.secondaryCTA.text}
                     <ArrowRight width={24} height={10} />
                   </Link>
@@ -158,7 +158,7 @@ export function CTASection({ content }: CTASectionProps) {
                 <div className="cta-v2-trust-item">
                   <div>
                     <p className="cta-v2-trust-label">Email Us</p>
-                    <a href="mailto:khushbunirmansewa@gmail.com" className="cta-v2-trust-value" style={{ fontSize: '0.8125rem' }}>
+                    <a href="mailto:khushbunirmansewa@gmail.com" className="cta-v2-trust-value">
                       khushbunirmansewa@gmail.com
                     </a>
                   </div>

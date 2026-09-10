@@ -103,9 +103,8 @@ export function ContactFormSection({
     <section
       style={{
         background: 'var(--color-gray-100)',
-        padding: 'clamp(5rem, 9vw, 9rem) 0',
+        padding: 'clamp(3rem, 5vw, 5rem) 0',
         position: 'relative',
-        overflow: 'hidden',
       }}
     >
       <GridLines variant="gray" />
@@ -151,7 +150,6 @@ export function ContactFormSection({
                   fontSize: '1rem',
                   lineHeight: 1.6,
                   color: 'var(--color-gray-600)',
-                  maxWidth: '420px',
                 }}
               >
                 {description}
@@ -159,7 +157,7 @@ export function ContactFormSection({
             </AnimatedElement>
           </div>
 
-          {/* Right: form */}
+          {/* Right: form — aligned to the right half of the grid */}
           <AnimatedElement direction="right" delay={0.2} className="contact-form-card">
             {state === 'success' ? (
               <div className="contact-form-success">
@@ -297,7 +295,7 @@ export function ContactFormSection({
                   type="submit"
                   disabled={state === 'submitting'}
                   className="btn-primary"
-                  style={{ padding: '14px 28px', fontSize: '0.875rem', alignSelf: 'flex-start' }}
+                  style={{ alignSelf: 'flex-start' }}
                 >
                   {state === 'submitting' ? 'Sending…' : 'Send Message'}
                   <ArrowRight width={24} height={10} />
@@ -323,11 +321,11 @@ export function ContactFormSection({
       <style jsx>{`
         .contact-form-layout {
           display: grid;
-          grid-template-columns: 1fr 1.5fr;
-          gap: clamp(2rem, 5vw, 5rem);
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
           align-items: start;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .contact-form-layout {
             grid-template-columns: 1fr;
           }
@@ -335,10 +333,13 @@ export function ContactFormSection({
         .contact-form-copy {
           position: sticky;
           top: 100px;
+          padding-right: clamp(2rem, 4vw, 4rem);
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .contact-form-copy {
             position: static;
+            padding-right: 0;
+            margin-bottom: 2.5rem;
           }
         }
         .contact-form {
@@ -359,7 +360,7 @@ export function ContactFormSection({
           grid-template-columns: 1fr 1fr;
           gap: 1.25rem;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
           .contact-form-row {
             grid-template-columns: 1fr;
           }

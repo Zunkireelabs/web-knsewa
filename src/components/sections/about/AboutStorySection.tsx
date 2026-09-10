@@ -27,18 +27,6 @@ export function AboutStorySection({ content }: AboutStorySectionProps) {
     const imageInner = imageInnerRef.current;
     if (!imageWrapper || !imageInner) return;
 
-    // Image reveal
-    gsap.fromTo(
-      imageWrapper,
-      { clipPath: 'inset(100% 0 0 0)' },
-      {
-        clipPath: 'inset(0% 0 0 0)',
-        duration: 1.2,
-        ease: 'power4.inOut',
-        scrollTrigger: { trigger: imageWrapper, start: 'top 78%' },
-      }
-    );
-
     // Parallax
     gsap.set(imageInner, { scale: 1.15 });
     gsap.to(imageInner, {
@@ -65,7 +53,6 @@ export function AboutStorySection({ content }: AboutStorySectionProps) {
         background: 'var(--color-white)',
         padding: 'clamp(5rem, 9vw, 9rem) 0',
         position: 'relative',
-        overflow: 'hidden',
       }}
     >
       <GridLines variant="gray" />

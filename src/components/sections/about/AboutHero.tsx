@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GridLines } from '@/components/ui/GridLines';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import { ArrowRight } from '@/components/ui/Icons';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import type { PageHeroContent, Stat } from '@/types/content';
 
 if (typeof window !== 'undefined') {
@@ -117,6 +118,15 @@ export function AboutHero({ content, stats }: AboutHeroProps) {
 
       <GridLines variant="light" />
 
+      {/* Breadcrumbs */}
+      {content.breadcrumbs && content.breadcrumbs.length > 0 && (
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 20, paddingTop: 'clamp(5rem, 10vw, 8rem)' }}>
+          <div className="wrapper">
+            <Breadcrumbs items={content.breadcrumbs} />
+          </div>
+        </div>
+      )}
+
       {/* Content */}
       <div
         className="wrapper prel w-full"
@@ -144,7 +154,7 @@ export function AboutHero({ content, stats }: AboutHeroProps) {
                 fontSize: 'clamp(0.9375rem, 1.1vw, 1.0625rem)',
                 fontWeight: 400,
                 lineHeight: 1.65,
-                color: 'rgba(255,255,255,0.5)',
+                color: 'rgba(255,255,255,0.85)',
                 maxWidth: '480px',
                 marginTop: '1.5rem',
               }}
@@ -214,7 +224,7 @@ export function AboutHero({ content, stats }: AboutHeroProps) {
                   style={{
                     fontSize: '0.625rem',
                     fontWeight: 500,
-                    color: 'rgba(255,255,255,0.3)',
+                    color: 'rgba(255,255,255,0.7)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.12em',
                     marginTop: '0.5rem',

@@ -5,7 +5,17 @@ export const homePageContent: HomePageContent = {
   seo: {
     title: 'Khushbu Nirman Sewa | Premium Construction Contractor in Nepal',
     description: 'Khushbu Nirman Sewa is a leading construction contractor in Biratnagar, Nepal with 30 years of experience in commercial and government construction projects.',
-    keywords: ['construction company nepal', 'biratnagar contractor', 'commercial construction', 'government construction'],
+    keywords: [
+      'Khushbu Nirman Sewa',
+      'khushbu nirman',
+      'nirman sewa biratnagar',
+      'खुशबु निर्माण सेवा',
+      'construction company nepal',
+      'biratnagar contractor',
+      'commercial construction',
+      'government construction',
+      'nirman company nepal',
+    ],
   },
 
   hero: {
@@ -30,18 +40,6 @@ export const homePageContent: HomePageContent = {
       cta: {
         text: 'Start Your Project',
         href: '/contact',
-      },
-    },
-    {
-      id: 'career',
-      icon: '👷',
-      title: 'A Career',
-      description:
-        'Join our team of dedicated professionals. We offer opportunities to grow, learn, and make an impact in the construction industry.',
-      image: '/images/projects/project-2.jpg',
-      cta: {
-        text: 'Explore Careers',
-        href: '/careers',
       },
     },
     {
@@ -143,7 +141,7 @@ export const homePageContent: HomePageContent = {
         shortTitle: 'Commercial',
         description: 'From corporate headquarters to retail complexes, we deliver commercial spaces that combine functionality with architectural excellence. Our portfolio includes office buildings, shopping centers, and mixed-use developments.',
         image: '/images/services/commercial.jpg',
-        href: '/services#commercial',
+        href: '/services/commercial',
       },
       {
         id: 'government',
@@ -152,7 +150,7 @@ export const homePageContent: HomePageContent = {
         shortTitle: 'Government',
         description: 'Trusted partner for government and institutional projects. We have successfully delivered schools, hospitals, administrative buildings, and public infrastructure that serve communities across Nepal.',
         image: '/images/services/government.jpg',
-        href: '/services#government',
+        href: '/services/government',
       },
       {
         id: 'industrial',
@@ -161,7 +159,7 @@ export const homePageContent: HomePageContent = {
         shortTitle: 'Industrial',
         description: 'Purpose-built industrial facilities designed for efficiency, safety, and long-term operational excellence. We specialize in manufacturing plants, warehouses, and logistics centers.',
         image: '/images/services/industrial.jpg',
-        href: '/services#industrial',
+        href: '/services/industrial',
       },
       {
         id: 'infrastructure',
@@ -170,7 +168,7 @@ export const homePageContent: HomePageContent = {
         shortTitle: 'Infrastructure',
         description: 'Essential infrastructure that connects communities and drives economic growth. Our expertise includes roads, bridges, water systems, and urban development projects.',
         image: '/images/hero-construction.jpg',
-        href: '/services#infrastructure',
+        href: '/services/infrastructure',
       },
     ],
   },
@@ -200,7 +198,7 @@ export const homePageContent: HomePageContent = {
       title: 'Safety First',
       description:
         'We prioritize the safety of our workers, partners, and communities above all else. Our comprehensive safety programs and rigorous protocols ensure that everyone returns home safely at the end of each day.',
-      image: '/images/projects/project-1.jpg',
+      image: '/images/commitments/safety-first.jpg',
       stats: {
         value: '99.9%',
         label: 'Safety record across all projects',
@@ -211,7 +209,7 @@ export const homePageContent: HomePageContent = {
       title: 'Environmental Stewardship',
       description:
         'We are committed to minimizing our environmental impact through sustainable building practices, efficient resource utilization, and innovative green construction technologies.',
-      image: '/images/projects/project-2.jpg',
+      image: '/images/commitments/environmental-stewardship.jpg',
       stats: {
         value: '40%',
         label: 'Reduction in carbon footprint since 2020',
@@ -222,7 +220,7 @@ export const homePageContent: HomePageContent = {
       title: 'Community Impact',
       description:
         'Our projects are designed to strengthen the communities we serve. We create local jobs, support small businesses, and build infrastructure that improves quality of life for generations.',
-      image: '/images/projects/project-3.jpg',
+      image: '/images/commitments/community-impact.jpg',
       stats: {
         value: '5,000+',
         label: 'Local jobs created annually',
@@ -233,7 +231,7 @@ export const homePageContent: HomePageContent = {
       title: 'Innovation & Technology',
       description:
         'We embrace cutting-edge construction technologies and methodologies to deliver projects more efficiently, with higher quality, and reduced environmental impact.',
-      image: '/images/projects/project-1.jpg',
+      image: '/images/commitments/innovation-technology.jpg',
       stats: {
         value: '15+',
         label: 'New technologies implemented',
@@ -244,7 +242,7 @@ export const homePageContent: HomePageContent = {
       title: 'Uncompromising Quality',
       description:
         'Every project we undertake reflects our commitment to excellence. We use the finest materials, employ skilled craftsmen, and maintain rigorous quality control standards.',
-      image: '/images/projects/project-2.jpg',
+      image: '/images/commitments/uncompromising-quality.jpg',
       stats: {
         value: '30+',
         label: 'Years of building excellence',
@@ -255,39 +253,9 @@ export const homePageContent: HomePageContent = {
       title: 'Ethical Business Practices',
       description:
         'We conduct our business with the highest ethical standards, maintaining transparent relationships with clients, partners, and stakeholders.',
-      image: '/images/projects/project-3.jpg',
+      image: '/images/commitments/ethical-business.jpg',
     },
   ],
-
-  careers: {
-    title: 'Build Your Career With Us',
-    subtitle: 'Join Our Team',
-    description:
-      'Be part of a team that is shaping the future of construction in Nepal. We offer competitive compensation, professional development opportunities, and a culture that values innovation and excellence.',
-    image: '/images/projects/legacy/project-22.jpg',
-    primaryCta: {
-      text: 'View Open Positions',
-      href: '/careers',
-    },
-    secondaryCta: {
-      text: 'Learn About Our Culture',
-      href: '/about#culture',
-    },
-    stats: [
-      {
-        value: '1,000+',
-        label: 'Team Members',
-      },
-      {
-        value: '50+',
-        label: 'Open Positions',
-      },
-      {
-        value: '7',
-        label: 'Provinces',
-      },
-    ],
-  },
 
   specializations: [
     {
@@ -295,6 +263,7 @@ export const homePageContent: HomePageContent = {
       title: 'Building',
       tagline: 'Building the Future',
       description: 'We mold spaces that inspire, innovate, and endure.',
+      bullets: ['Residential & commercial complexes', 'Institutional & government buildings', 'Earthquake-resistant structures'],
       image: '/images/services/service1.jpg',
       href: '/services/building',
     },
@@ -303,6 +272,7 @@ export const homePageContent: HomePageContent = {
       title: 'Water Treatment & Sanitation',
       tagline: 'Sanctuaries of Well-being',
       description: 'Elevating living conditions with advanced water treatment and sanitation.',
+      bullets: ['Wastewater treatment plants', 'Sewerage & drainage systems', 'Community sanitation infrastructure'],
       image: '/images/services/service2.jpg',
       href: '/services/water-treatment',
     },
@@ -311,6 +281,7 @@ export const homePageContent: HomePageContent = {
       title: 'Road and Drain',
       tagline: 'Pathways of Progress',
       description: 'Crafting roads and drains that lead societies towards advancement.',
+      bullets: ['Urban & rural road construction', 'Stormwater drain networks', 'Pavement & bitumen works'],
       image: '/images/services/service3.jpg',
       href: '/services/road-drain',
     },
@@ -319,6 +290,7 @@ export const homePageContent: HomePageContent = {
       title: 'Airport',
       tagline: 'Taking Flight',
       description: 'Building gateways to possibilities with airport construction.',
+      bullets: ['Runway & apron construction', 'Terminal & hangar buildings', 'Taxiway & airfield works'],
       image: '/images/services/service4.jpg',
       href: '/services/airport',
     },
@@ -327,6 +299,7 @@ export const homePageContent: HomePageContent = {
       title: 'Irrigation',
       tagline: 'Nurturing Growth',
       description: 'Engineering irrigation solutions that nurture landscapes and livelihoods.',
+      bullets: ['Canal & headworks construction', 'Distribution network systems', 'Agricultural water management'],
       image: '/images/services/service5.jpg',
       href: '/services/irrigation',
     },
@@ -335,6 +308,7 @@ export const homePageContent: HomePageContent = {
       title: 'Energy',
       tagline: 'Powering Progress',
       description: 'Energizing growth through cutting-edge energy solutions.',
+      bullets: ['Hydropower civil works', 'Substation construction', 'Rural electrification infrastructure'],
       image: '/images/services/service6.jpg',
       href: '/services/energy',
     },
@@ -343,6 +317,7 @@ export const homePageContent: HomePageContent = {
       title: 'Water Supply',
       tagline: 'Fluid Connections',
       description: 'Ensuring communities thrive with efficient water supply networks.',
+      bullets: ['Distribution pipelines', 'Overhead reservoir construction', 'Intake & pump stations'],
       image: '/images/services/service-center.jpg',
       href: '/services/water-supply',
     },
@@ -351,6 +326,7 @@ export const homePageContent: HomePageContent = {
       title: 'Bridge and Culvert',
       tagline: 'Bridges to Unity',
       description: 'Connecting hearts and places through bridges and culverts.',
+      bullets: ['RCC & steel bridges', 'Suspension footbridges', 'Box culverts & river crossings'],
       image: '/images/services/infrastructure.jpg',
       href: '/services/bridge-culvert',
     },
@@ -374,12 +350,12 @@ export const homePageContent: HomePageContent = {
     headline: 'Ready to Build?',
     description: 'Whether you\'re planning a commercial development, government project, or industrial facility, our team is ready to bring your vision to life.',
     primaryCTA: {
-      text: 'Request Site Visit',
-      href: '/request-site-visit',
+      text: 'Get In Touch',
+      href: '/contact',
     },
     secondaryCTA: {
-      text: 'Request Quote',
-      href: '/request-quote',
+      text: 'View Our Work',
+      href: '/projects',
     },
   },
 };

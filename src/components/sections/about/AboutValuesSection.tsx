@@ -112,20 +112,6 @@ export function AboutValuesSection({ label, headline, values }: AboutValuesSecti
     const container = imageContainerRef.current;
     if (!section || !container) return;
 
-    gsap.fromTo(
-      container,
-      { clipPath: 'inset(0 100% 0 0)' },
-      {
-        clipPath: 'inset(0 0% 0 0)',
-        duration: 1,
-        ease: 'power3.inOut',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top 70%',
-        },
-      }
-    );
-
     return () => {
       ScrollTrigger.getAll()
         .filter((t) => t.trigger === section)
@@ -377,7 +363,7 @@ export function AboutValuesSection({ label, headline, values }: AboutValuesSecti
                     {/* Expanded content */}
                     <div
                       style={{
-                        maxHeight: isActive ? '200px' : '0',
+                        maxHeight: isActive ? '400px' : '0',
                         overflow: 'hidden',
                         transition: 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                       }}
@@ -409,7 +395,7 @@ export function AboutValuesSection({ label, headline, values }: AboutValuesSecti
                             gap: '0.75rem',
                             padding: '0.5rem 1rem',
                             background: 'rgba(11,93,208,0.06)',
-                            borderRadius: '2px',
+                            borderRadius: '16px',
                             border: '1px solid rgba(11,93,208,0.1)',
                           }}
                         >

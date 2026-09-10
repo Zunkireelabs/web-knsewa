@@ -102,7 +102,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-[190] bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         />
       )}
@@ -110,16 +110,16 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
       {/* Panel */}
       <div
         ref={panelRef}
-        className="fixed top-0 right-0 bottom-0 z-60 w-full max-w-lg bg-white shadow-2xl hidden"
+        className="fixed top-0 right-0 bottom-0 z-[200] w-full max-w-lg bg-white shadow-2xl hidden"
         style={{ transform: 'translateX(100%)' }}
       >
         <div className="h-full overflow-y-auto">
           {/* Header */}
-          <div className="sticky top-0 z-10 bg-white border-b border-[var(--color-gray-200)] px-8 py-6 flex items-center justify-between">
+          <div className="sticky top-0 z-10 bg-white border-b border-[var(--color-gray-200)] px-5 sm:px-8 py-5 sm:py-6 flex items-center justify-between">
             <h2 className="text-2xl font-medium">Get in Touch</h2>
             <button
               onClick={onClose}
-              className="p-2 text-[var(--color-gray-500)] hover:text-[var(--color-primary)] transition-colors"
+              className="p-2.5 text-[var(--color-gray-500)] hover:text-[var(--color-primary)] transition-colors"
               aria-label="Close panel"
             >
               <CloseIcon className="w-6 h-6" />
@@ -127,7 +127,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
           </div>
 
           {/* Content */}
-          <div ref={contentRef} className="p-8">
+          <div ref={contentRef} className="p-5 sm:p-8">
             {/* Contact Info */}
             <div className="mb-8 space-y-4">
               <a
@@ -173,12 +173,12 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3.5 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="email"
@@ -193,7 +193,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -210,7 +210,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
                     placeholder="+977-..."
                   />
                 </div>
@@ -229,7 +229,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3.5 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors"
                   placeholder="Your company"
                 />
               </div>
@@ -246,7 +246,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors bg-white"
+                  className="w-full px-4 py-3.5 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors bg-white"
                 >
                   <option value="">Select a project type</option>
                   <option value="commercial">Commercial Construction</option>
@@ -271,7 +271,7 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3.5 border border-[var(--color-gray-200)] focus:border-[var(--color-primary)] focus:outline-none transition-colors resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>

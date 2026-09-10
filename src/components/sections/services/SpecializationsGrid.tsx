@@ -7,7 +7,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Specialization } from '@/types/content';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { ArrowRight } from '@/components/ui/Icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,37 +26,51 @@ function SpecializationCard({ item }: { item: Specialization }) {
         alt={item.title}
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
       />
 
-      {/* Default gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500" />
+      {/* Gradient */}
+      <div
+        className="absolute inset-0 transition-opacity duration-500 lg:group-hover:opacity-0"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, transparent 100%)' }}
+      />
 
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-[var(--color-accent)]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-      {/* Default content (bottom) */}
-      <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6 transition-opacity duration-300 group-hover:opacity-0">
-        <p className="text-white/60 text-[12px] font-medium tracking-[0.1em] uppercase mb-2">
-          {item.tagline}
-        </p>
-        <h3 className="text-white text-fs-19 lg:text-fs-24 font-medium leading-[1.2]">
+      {/* Default content — heading only, fades on desktop hover */}
+      <div className="absolute bottom-0 left-0 right-0 lg:transition-opacity lg:duration-300 lg:group-hover:opacity-0" style={{ padding: '20px' }}>
+        <h3
+          className="font-medium text-white lg:text-fs-24"
+          style={{ fontSize: '1.125rem', lineHeight: 1.2 }}
+        >
           {item.title}
         </h3>
       </div>
 
-      {/* Hover content (centered) */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+      {/* Hover overlay + content — desktop only */}
+      <div
+        className="hidden lg:flex absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex-col justify-start"
+        style={{
+          background: 'rgba(0,0,0,0.58)',
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
+          padding: '24px',
+        }}
+      >
         <h3 className="text-white text-fs-24 font-medium leading-[1.2] mb-3">
           {item.title}
         </h3>
-        <p className="text-white/80 text-[14px] leading-[1.6] mb-5 max-w-[220px]">
+        <p className="text-white/80 text-[14px] leading-[1.6]" style={{ marginBottom: item.bullets?.length ? '14px' : 0 }}>
           {item.description}
         </p>
-        <span className="inline-flex items-center gap-2 text-white text-[13px] font-medium tracking-[0.05em] uppercase">
-          Explore
-          <ArrowRight />
-        </span>
+        {item.bullets && (
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '7px' }}>
+            {item.bullets.map((b) => (
+              <li key={b} className="text-white/75 flex items-center gap-2" style={{ fontSize: '0.8rem', lineHeight: 1.4 }}>
+                <span className="w-1 h-1 rounded-full bg-white/50 flex-shrink-0" />
+                {b}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </Link>
   );
@@ -119,7 +132,7 @@ export function SpecializationsGrid({ specializations }: SpecializationsGridProp
           align="left"
         />
 
-        <div className="mt-12 lg:mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+        <div className="mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
           {specializations.map((item) => (
             <div key={item.id} className="spec-card">
               <SpecializationCard item={item} />

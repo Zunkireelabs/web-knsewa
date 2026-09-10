@@ -2,10 +2,17 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { MenuIcon, CloseIcon, SearchIcon, ChevronDownIcon } from '@/components/ui/Icons';
-import { MegaMenu, SearchOverlay } from './MegaMenu';
-import { ContactPanel } from './ContactPanel';
+import { MenuIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon, PhoneIcon, MailIcon, FacebookIcon } from '@/components/ui/Icons';
+import { MegaMenu } from './MegaMenu';
+
 import type { NavItem, SiteSettings } from '@/types/content';
+
+const SERVICES_SUBNAV = [
+  { label: 'Commercial Construction', href: '/services/commercial' },
+  { label: 'Government & Institutional', href: '/services/government' },
+  { label: 'Industrial Facilities', href: '/services/industrial' },
+  { label: 'Infrastructure Development', href: '/services/infrastructure' },
+];
 
 interface HeaderProps {
   settings: SiteSettings;
@@ -35,20 +42,11 @@ const megaMenuContent = {
         ],
       },
       {
-        title: 'Expertise',
-        items: [
-          { label: 'Project Management', href: '/services/project-management' },
-          { label: 'Design-Build', href: '/services/design-build' },
-          { label: 'Renovation', href: '/services/renovation' },
-          { label: 'Sustainability', href: '/services/sustainability' },
-        ],
-      },
-      {
         title: 'Resources',
         items: [
           { label: 'Case Studies', href: '/projects' },
           { label: 'Latest News', href: '/insights' },
-          { label: 'Our Process', href: '/about#process' },
+          { label: 'Our Process', href: '/about' },
         ],
       },
     ],
@@ -64,9 +62,10 @@ const megaMenuContent = {
 export function Header({ settings, navigation }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
+const [headerHeight, setHeaderHeight] = useState(80);
+  const headerRef = React.useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,12 +77,22 @@ export function Header({ settings, navigation }: HeaderProps) {
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen || isContactOpen) {
+    if (!headerRef.current) return;
+    const ro = new ResizeObserver(() => {
+      if (headerRef.current) setHeaderHeight(headerRef.current.offsetHeight);
+    });
+    ro.observe(headerRef.current);
+    setHeaderHeight(headerRef.current.offsetHeight);
+    return () => ro.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
-  }, [isMobileMenuOpen, isContactOpen]);
+  }, [isMobileMenuOpen]);
 
   const closeMegaMenu = useCallback(() => {
     setActiveMegaMenu(null);
@@ -104,7 +113,8 @@ export function Header({ settings, navigation }: HeaderProps) {
   return (
     <>
       <header
-        className={`header ${isScrolled ? 'scrolled' : ''}`}
+        ref={headerRef}
+        className={`header ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}
         onMouseLeave={handleHeaderLeave}
       >
         <div className="header-holder">
@@ -114,7 +124,7 @@ export function Header({ settings, navigation }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="header-nav hidden xl:flex items-stretch h-full">
+          <nav className="header-nav hidden lg:flex items-stretch h-full">
             {navigation.map((item) => {
               const isActive = item.href === '/services' && activeMegaMenu === 'services';
               const isServices = item.href === '/services';
@@ -143,33 +153,17 @@ export function Header({ settings, navigation }: HeaderProps) {
           </nav>
 
           {/* Right Actions */}
-          <div className="hidden xl:flex items-center gap-4">
-            {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className={`p-2 transition-colors ${
-                !isScrolled
-                  ? 'text-white hover:text-[var(--color-accent)]'
-                  : 'text-[var(--color-primary)] hover:text-[var(--color-accent)]'
-              }`}
-              aria-label="Search"
-            >
-              <SearchIcon className="w-5 h-5" />
-            </button>
-
+          <div className="hidden lg:flex items-center gap-4">
             {/* CTA Button */}
-            <button
-              onClick={() => setIsContactOpen(true)}
-              className="header-cta"
-            >
+            <Link href="/contact" className="header-cta">
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`xl:hidden p-2 ${
+            className={`lg:hidden p-3 ${
               isScrolled || isMobileMenuOpen ? 'text-[var(--color-primary)]' : 'text-white'
             }`}
             aria-label="Toggle menu"
@@ -199,67 +193,118 @@ export function Header({ settings, navigation }: HeaderProps) {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-white transform transition-transform duration-500 xl:hidden ${
+        className={`fixed z-[90] lg:hidden flex flex-col transform transition-transform duration-500 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        style={{ top: headerHeight, left: 0, right: 0, bottom: 0, background: 'var(--color-primary)' }}
       >
-        <div className="flex flex-col h-full pt-20 px-6 pb-6 overflow-y-auto">
-          {/* Search in Mobile */}
-          <div className="mb-6">
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsSearchOpen(true);
-              }}
-              className="flex items-center gap-3 w-full py-3 text-lg text-[var(--color-gray-500)]"
-            >
-              <SearchIcon className="w-5 h-5" />
-              Search
-            </button>
-          </div>
+        {/* Scrollable nav area */}
+        <div className="flex-1 overflow-y-auto overscroll-contain">
+          <nav className="flex flex-col px-6 pt-2">
+            {[...navigation, { label: 'Contact', href: '/contact', children: [] }].map((item) => {
+              const isServices = item.href === '/services';
+              if (isServices) {
+                return (
+                  <div
+                    key={item.href}
+                    className="flex flex-col"
+                    style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    {/* Services row */}
+                    <div className="flex items-center justify-between" style={{ minHeight: '3rem' }}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex-1 flex items-center font-medium tracking-wide"
+                        style={{ color: 'var(--color-white)', fontSize: '1rem', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                        className="p-2.5"
+                        style={{ color: 'rgba(255,255,255,0.5)' }}
+                        aria-label="Toggle services"
+                      >
+                        <ChevronDownIcon className={`w-4 h-4 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                    </div>
 
-          <nav className="flex-1">
-            {navigation.map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-4 text-3xl font-medium text-[var(--color-primary)] border-b border-[var(--color-gray-200)] hover:text-[var(--color-accent)] transition-colors"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.label}
-              </Link>
-            ))}
+                    {/* Services sub-items */}
+                    <div className={`overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
+                      <div className="flex flex-col mb-2">
+                        {SERVICES_SUBNAV.map((sub, idx) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-3"
+                            style={{
+                              color: 'rgba(255,255,255,0.75)',
+                              fontSize: '0.9375rem',
+                              lineHeight: 1.4,
+                              paddingTop: '0.75rem',
+                              paddingBottom: '0.75rem',
+                              borderTop: idx === 0 ? 'none' : '1px solid rgba(255,255,255,0.1)',
+                            }}
+                          >
+                            <span
+                              className="flex-shrink-0 rounded-full"
+                              style={{ width: '5px', height: '5px', background: 'var(--color-accent)' }}
+                            />
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between font-medium tracking-wide"
+                  style={{
+                    borderBottom: '1px solid rgba(255,255,255,0.1)',
+                    color: 'var(--color-white)',
+                    fontSize: '1rem',
+                    minHeight: '3rem',
+                    paddingTop: '0.75rem',
+                    paddingBottom: '0.75rem',
+                  }}
+                >
+                  {item.label}
+                  <ChevronRightIcon className="w-4 h-4 text-white/30" />
+                </Link>
+              );
+            })}
           </nav>
+        </div>
 
-          <div className="mt-auto space-y-4">
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsContactOpen(true);
-              }}
-              className="block w-full py-4 text-center text-lg font-medium bg-[var(--color-accent)] text-white"
+        {/* Bottom contact strip */}
+        <div className="px-6 py-4 flex-shrink-0" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href={`tel:${settings.phone}`}
+              className="text-xs"
+              style={{ color: 'rgba(255,255,255,0.55)' }}
             >
-              Contact Us
-            </button>
-            <div className="flex items-center justify-center gap-4 text-sm text-[var(--color-gray-500)]">
-              <a href={`tel:${settings.phone}`}>{settings.phone}</a>
-              <span>|</span>
-              <a href={`mailto:${settings.email}`}>{settings.email}</a>
-            </div>
+              {settings.phone}
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.25)' }}>·</span>
+            <a
+              href={`mailto:${settings.email}`}
+              className="text-xs"
+              style={{ color: 'rgba(255,255,255,0.55)' }}
+            >
+              {settings.email}
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Search Overlay */}
-      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-
-      {/* Contact Panel */}
-      <ContactPanel
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-        settings={settings}
-      />
-    </>
+</>
   );
 }

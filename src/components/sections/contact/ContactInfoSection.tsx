@@ -22,123 +22,125 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
         background: 'var(--color-white)',
         padding: 'clamp(5rem, 9vw, 9rem) 0',
         position: 'relative',
-        overflow: 'hidden',
       }}
     >
       <GridLines variant="gray" />
 
       <div className="wrapper prel" style={{ zIndex: 10 }}>
-        {/* Header */}
-        <div style={{ marginBottom: 'clamp(3rem, 5vw, 4rem)', maxWidth: '720px' }}>
-          <AnimatedElement>
-            <p className="section-label" style={{ color: 'var(--color-accent)' }}>
-              {label}
-            </p>
-          </AnimatedElement>
-          <AnimatedElement delay={0.05}>
-            <h2
-              className="title"
-              style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.8125rem)',
-                fontWeight: 300,
-                lineHeight: 1.1,
-                letterSpacing: '-0.01em',
-                color: 'var(--color-primary)',
-                marginTop: '1.25rem',
-              }}
-            >
-              {headline}
-            </h2>
-          </AnimatedElement>
-          <AnimatedElement delay={0.1}>
-            <div
-              style={{
-                width: '36px',
-                height: '2px',
-                background: 'var(--color-accent)',
-                margin: '1.75rem 0',
-              }}
-            />
-          </AnimatedElement>
-          <AnimatedElement delay={0.15}>
-            <p
-              className="para"
-              style={{
-                fontSize: '1rem',
-                lineHeight: 1.6,
-                color: 'var(--color-gray-600)',
-              }}
-            >
-              {description}
-            </p>
-          </AnimatedElement>
-        </div>
+        {/* Two-column layout: text left, cards right */}
+        <div className="contact-info-layout">
+          {/* Left: heading content */}
+          <div className="contact-info-text">
+            <AnimatedElement>
+              <p className="section-label" style={{ color: 'var(--color-accent)' }}>
+                {label}
+              </p>
+            </AnimatedElement>
+            <AnimatedElement delay={0.05}>
+              <h2
+                className="title"
+                style={{
+                  fontSize: 'clamp(1.75rem, 3vw, 2.8125rem)',
+                  fontWeight: 300,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.01em',
+                  color: 'var(--color-primary)',
+                  marginTop: '1.25rem',
+                }}
+              >
+                {headline}
+              </h2>
+            </AnimatedElement>
+            <AnimatedElement delay={0.1}>
+              <div
+                style={{
+                  width: '36px',
+                  height: '2px',
+                  background: 'var(--color-accent)',
+                  margin: '1.75rem 0',
+                }}
+              />
+            </AnimatedElement>
+            <AnimatedElement delay={0.15}>
+              <p
+                className="para"
+                style={{
+                  fontSize: '1rem',
+                  lineHeight: 1.6,
+                  color: 'var(--color-gray-600)',
+                  maxWidth: '480px',
+                }}
+              >
+                {description}
+              </p>
+            </AnimatedElement>
+          </div>
 
-        {/* Cards Grid */}
-        <StaggerContainer
-          stagger={0.08}
-          className="contact-info-grid"
-        >
-          {/* Phone Card */}
-          <a
-            href={`tel:${hq.phone}`}
-            className="contact-info-card"
-          >
-            <div className="contact-info-icon">
-              <PhoneIcon width={22} height={22} />
-            </div>
-            <p className="contact-info-eyebrow">Call Us</p>
-            <p className="contact-info-value">{hq.phone}</p>
-            <span className="contact-info-link">
-              Tap to call <ArrowRight width={20} height={8} />
-            </span>
-          </a>
-
-          {/* Email Card */}
-          <a
-            href={`mailto:${hq.email}`}
-            className="contact-info-card"
-          >
-            <div className="contact-info-icon">
-              <MailIcon width={22} height={22} />
-            </div>
-            <p className="contact-info-eyebrow">Email Us</p>
-            <p className="contact-info-value" style={{ wordBreak: 'break-all' }}>{hq.email}</p>
-            <span className="contact-info-link">
-              Send email <ArrowRight width={20} height={8} />
-            </span>
-          </a>
-
-          {/* Address Card */}
-          <a
-            href={hq.mapUrl ?? '#'}
-            target={hq.mapUrl ? '_blank' : undefined}
-            rel={hq.mapUrl ? 'noopener noreferrer' : undefined}
-            className="contact-info-card"
-          >
-            <div className="contact-info-icon">
-              <MapPinIcon width={22} height={22} />
-            </div>
-            <p className="contact-info-eyebrow">Visit Us</p>
-            <p className="contact-info-value">{hq.address}</p>
-            {hq.mapUrl && (
-              <span className="contact-info-link">
-                Open in Maps <ArrowRight width={20} height={8} />
-              </span>
-            )}
-          </a>
-
-          {/* Hours Card */}
-          {hq.hours && (
-            <div className="contact-info-card" style={{ cursor: 'default' }}>
+          {/* Right: cards stacked vertically */}
+          <StaggerContainer stagger={0.08} className="contact-info-cards">
+            {/* Phone Card */}
+            <a href={`tel:${hq.phone}`} className="contact-info-card">
               <div className="contact-info-icon">
-                <ClockIcon width={22} height={22} />
+                <PhoneIcon width={22} height={22} />
               </div>
-              <p className="contact-info-eyebrow">Office Hours</p>
-              <p className="contact-info-value">{hq.hours}</p>
-            </div>
-          )}
-        </StaggerContainer>
+              <div>
+                <p className="contact-info-eyebrow">Call Us</p>
+                <p className="contact-info-value">{hq.phone}</p>
+                <span className="contact-info-link">
+                  Tap to call <ArrowRight width={20} height={8} />
+                </span>
+              </div>
+            </a>
+
+            {/* Email Card */}
+            <a href={`mailto:${hq.email}`} className="contact-info-card">
+              <div className="contact-info-icon">
+                <MailIcon width={22} height={22} />
+              </div>
+              <div>
+                <p className="contact-info-eyebrow">Email Us</p>
+                <p className="contact-info-value" style={{ wordBreak: 'break-all' }}>{hq.email}</p>
+                <span className="contact-info-link">
+                  Send email <ArrowRight width={20} height={8} />
+                </span>
+              </div>
+            </a>
+
+            {/* Address Card */}
+            <a
+              href={hq.mapUrl ?? '#'}
+              target={hq.mapUrl ? '_blank' : undefined}
+              rel={hq.mapUrl ? 'noopener noreferrer' : undefined}
+              className="contact-info-card"
+            >
+              <div className="contact-info-icon">
+                <MapPinIcon width={22} height={22} />
+              </div>
+              <div>
+                <p className="contact-info-eyebrow">Visit Us</p>
+                <p className="contact-info-value">{hq.address}</p>
+                {hq.mapUrl && (
+                  <span className="contact-info-link">
+                    Open in Maps <ArrowRight width={20} height={8} />
+                  </span>
+                )}
+              </div>
+            </a>
+
+            {/* Hours Card */}
+            {hq.hours && (
+              <div className="contact-info-card" style={{ cursor: 'default' }}>
+                <div className="contact-info-icon">
+                  <ClockIcon width={22} height={22} />
+                </div>
+                <div>
+                  <p className="contact-info-eyebrow">Office Hours</p>
+                  <p className="contact-info-value">{hq.hours}</p>
+                </div>
+              </div>
+            )}
+          </StaggerContainer>
+        </div>
 
         {/* Map Embed */}
         {hq.mapEmbedUrl && (
@@ -167,42 +169,61 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
       </div>
 
       <style jsx>{`
-        .contact-info-grid {
+        .contact-info-layout {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1.25rem;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(3rem, 6vw, 6rem);
+          align-items: start;
         }
-        @media (max-width: 1024px) {
-          .contact-info-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
+        .contact-info-text {
+          position: sticky;
+          top: 6rem;
+          align-self: start;
         }
-        @media (max-width: 600px) {
-          .contact-info-grid {
+        .contact-info-cards {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          max-width: 420px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        @media (max-width: 900px) {
+          .contact-info-layout {
             grid-template-columns: 1fr;
+          }
+          .contact-info-text {
+            position: static;
+          }
+          .contact-info-cards {
+            margin: 0;
           }
         }
         .contact-info-card {
           display: flex;
-          flex-direction: column;
-          padding: 2rem 1.75rem;
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 1.25rem;
+          padding: 1.5rem 0;
           background: var(--color-white);
-          border: 1px solid var(--color-gray-200);
-          transition: border-color 0.3s ease, transform 0.3s ease;
+          border-bottom: 1px solid var(--color-gray-200);
+          transition: color 0.2s ease;
           text-decoration: none;
           color: inherit;
         }
-        a.contact-info-card:hover {
-          border-color: var(--color-accent);
-          transform: translateY(-2px);
+        .contact-info-cards > :first-child {
+          border-top: 1px solid var(--color-gray-200);
+        }
+        a.contact-info-card:hover .contact-info-link {
+          color: var(--color-primary);
         }
         .contact-info-icon {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 1.25rem;
+          flex-shrink: 0;
+          width: 44px;
+          height: 44px;
           color: var(--color-accent);
           background: var(--color-gray-100);
         }
@@ -219,8 +240,7 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
           font-weight: 500;
           line-height: 1.4;
           color: var(--color-primary);
-          margin-bottom: 1rem;
-          flex: 1;
+          margin-bottom: 0.5rem;
         }
         .contact-info-link {
           display: inline-flex;

@@ -153,7 +153,7 @@ export function ServicesHero({ content, stats }: ServicesHeroProps) {
       {/* Main content - vertically centered like homepage */}
       <div
         ref={contentRef}
-        className="wrapper prel w-full"
+        className="wrapper prel w-full services-hero-wrapper"
         style={{ zIndex: 10 }}
       >
         <div className="hero-content">
@@ -194,7 +194,7 @@ export function ServicesHero({ content, stats }: ServicesHeroProps) {
               display: 'flex',
               alignItems: 'center',
               gap: '1.5rem',
-              flexWrap: 'wrap',
+              flexWrap: 'nowrap',
             }}
           >
             <Link
@@ -223,16 +223,11 @@ export function ServicesHero({ content, stats }: ServicesHeroProps) {
           zIndex: 10,
           borderTop: '1px solid rgba(255,255,255,0.1)',
           backdropFilter: 'blur(10px)',
-          background: 'rgba(23,23,27,0.3)',
+          background: 'rgba(23,23,27,0.6)',
         }}
       >
         <div className="wrapper">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-            }}
-          >
+          <div className="stats-bar-grid">
             {stats.map((stat, i) => (
               <div
                 key={i}
@@ -257,7 +252,7 @@ export function ServicesHero({ content, stats }: ServicesHeroProps) {
                   style={{
                     fontSize: '0.625rem',
                     fontWeight: 500,
-                    color: 'rgba(255,255,255,0.35)',
+                    color: 'rgba(255,255,255,0.7)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.12em',
                     marginTop: '0.5rem',

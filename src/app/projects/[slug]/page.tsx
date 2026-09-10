@@ -13,6 +13,7 @@ import { ProjectGallery } from '@/components/sections/projects/ProjectGallery';
 import { ProjectNav } from '@/components/sections/projects/ProjectNav';
 import { RelatedSection } from '@/components/sections/RelatedSection';
 import { CTASection } from '@/components/sections/CTASection';
+import { JsonLd } from '@/components/ui/JsonLd';
 
 export function generateStaticParams() {
   const projects = getAllProjects();
@@ -31,10 +32,11 @@ export async function generateMetadata({
   return {
     title: project.seo.title,
     description: project.seo.description,
+    alternates: { canonical: `/projects/${slug}/` },
     openGraph: {
       title: project.seo.title,
       description: project.seo.description,
-      images: [project.images.featured],
+      images: [{ url: `https://knsewa.com${project.images.featured}`, width: 1200, height: 630, alt: project.seo.title }],
     },
   };
 }
@@ -57,8 +59,44 @@ export default async function ProjectDetailPage({
   const related = getRelatedProjects(project, 3);
   const { cta } = getProjectsPage();
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": project.seo.description,
+    "creator": { "@id": "https://knsewa.com/#organization" },
+    "locationCreated": { "@type": "Place", "name": `${project.location}, Nepal` },
+    "image": `https://knsewa.com${project.images.featured}`,
+    "url": `https://knsewa.com/projects/${slug}/`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://knsewa.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://knsewa.com/projects/" },
+      { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://knsewa.com/projects/${slug}/` },
+    ],
+  };
+
+  const faqSchema = project.faq && project.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": project.faq.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+        })),
+      }
+    : null;
+
   return (
-    <>
+    <div className="project-detail-page">
+      <JsonLd schema={projectSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      {faqSchema && <JsonLd schema={faqSchema} />}
       <ProjectHero project={project} />
       <ProjectInfoBar project={project} />
       <ProjectOverview project={project} />
@@ -80,6 +118,6 @@ export default async function ProjectDetailPage({
       )}
       <ProjectNav prev={prevProject} next={nextProject} />
       <CTASection content={cta} />
-    </>
+    </div>
   );
 }

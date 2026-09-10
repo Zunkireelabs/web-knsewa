@@ -77,7 +77,7 @@ export function ProjectsSection({ headline, categories, projects, limit }: Proje
       <div className="wrapper prel" style={{ zIndex: 10 }}>
         {/* Header */}
         <AnimatedElement>
-          <h2 className="title fs-45 mb-12">{headline}</h2>
+          <h2 className="title fs-45 mb-12 section-header">{headline}</h2>
         </AnimatedElement>
 
         {/* Search/Filter Toolbar */}
@@ -129,16 +129,40 @@ export function ProjectsSection({ headline, categories, projects, limit }: Proje
         </AnimatedElement>
         </div>
 
-        {/* 4-Column Project Grid */}
-        <div className="projects-uniform-grid">
-          {filteredProjects.map((project, index) => (
-            <AnimatedElement key={project.id} delay={index * 0.05}>
-              <Link href={`/projects/${project.slug}`} className="project-card">
+        {/* 4-column grid on desktop; auto-scrolling horizontal marquee on mobile */}
+        <div className="projects-grid-wrapper">
+          <div className="projects-uniform-grid">
+            {filteredProjects.map((project, index) => (
+              <AnimatedElement key={project.id} delay={index * 0.05}>
+                <Link href={`/projects/${project.slug}`} className="project-card">
+                  <span className="project-category">{project.category}</span>
+                  <div className="project-image">
+                    <Image
+                      src={project.images.thumbnail}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="project-location">{project.location}</p>
+                  <h3 className="project-title">{project.title}</h3>
+                </Link>
+              </AnimatedElement>
+            ))}
+            {/* Duplicate set for seamless marquee loop on mobile (hidden on desktop). */}
+            {filteredProjects.map((project) => (
+              <Link
+                key={`dup-${project.id}`}
+                href={`/projects/${project.slug}`}
+                className="project-card projects-marquee-dup"
+                aria-hidden="true"
+                tabIndex={-1}
+              >
                 <span className="project-category">{project.category}</span>
                 <div className="project-image">
                   <Image
                     src={project.images.thumbnail}
-                    alt={project.title}
+                    alt=""
                     fill
                     className="object-cover"
                   />
@@ -146,8 +170,8 @@ export function ProjectsSection({ headline, categories, projects, limit }: Proje
                 <p className="project-location">{project.location}</p>
                 <h3 className="project-title">{project.title}</h3>
               </Link>
-            </AnimatedElement>
-          ))}
+            ))}
+          </div>
         </div>
 
         {filteredProjects.length === 0 && (

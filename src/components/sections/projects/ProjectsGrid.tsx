@@ -1,18 +1,14 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GridLines } from '@/components/ui/GridLines';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import { ArrowRight } from '@/components/ui/Icons';
 import type { Project } from '@/types/content';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 interface ProjectsGridProps {
   categories: string[];
@@ -32,40 +28,6 @@ export function ProjectsGrid({ categories, projects }: ProjectsGridProps) {
   const visible = filtered.slice(0, visibleCount);
   const hasMore = filtered.length > visibleCount;
 
-  // Clip-path reveal on scroll for each card image
-  useEffect(() => {
-    if (!gridRef.current) return;
-
-    const cards = gridRef.current.querySelectorAll('.project-card-img');
-    const animations: gsap.core.Tween[] = [];
-
-    cards.forEach((card) => {
-      const anim = gsap.fromTo(
-        card,
-        { clipPath: 'inset(0 100% 0 0)' },
-        {
-          clipPath: 'inset(0 0% 0 0)',
-          duration: 0.9,
-          ease: 'power3.inOut',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-          },
-        }
-      );
-      animations.push(anim);
-    });
-
-    return () => {
-      animations.forEach((a) => a.kill());
-      ScrollTrigger.getAll()
-        .filter((t) => {
-          const el = t.trigger as HTMLElement;
-          return el?.classList?.contains('project-card-img');
-        })
-        .forEach((t) => t.kill());
-    };
-  }, [activeCategory, visibleCount]);
 
   const handleFilter = (cat: string) => {
     setActiveCategory(cat);
@@ -180,16 +142,14 @@ export function ProjectsGrid({ categories, projects }: ProjectsGridProps) {
                 {project.status && (
                   <span
                     className="project-card-status"
-                    style={{
-                      color: project.status === 'running' ? '#34d399' : 'rgba(255,255,255,0.5)',
-                    }}
+                    style={project.status === 'running' ? { color: '#34d399' } : undefined}
                   >
                     <span
                       style={{
                         width: '6px',
                         height: '6px',
                         borderRadius: '50%',
-                        background: project.status === 'running' ? '#34d399' : 'rgba(255,255,255,0.3)',
+                        background: '#34d399',
                         display: 'inline-block',
                         marginRight: '0.375rem',
                       }}

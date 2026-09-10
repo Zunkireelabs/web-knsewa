@@ -238,7 +238,7 @@ export function MegaMenu({ isOpen, onClose, columns, featured, intro }: MegaMenu
                     aspectRatio: '16 / 10',
                     overflow: 'hidden',
                     marginBottom: '0.875rem',
-                    borderRadius: '2px',
+                    borderRadius: '16px',
                   }}
                 >
                   <Image

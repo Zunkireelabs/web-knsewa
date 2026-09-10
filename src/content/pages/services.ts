@@ -43,7 +43,7 @@ export const servicesPageContent: ServicesPageContent = {
         description:
           'From corporate headquarters to retail complexes, we deliver commercial spaces that combine functionality with architectural excellence. Our portfolio includes office buildings, shopping centers, hotels, and mixed-use developments that define Nepal\'s urban landscape.',
         image: '/images/services/commercial.jpg',
-        href: '/services#commercial',
+        href: '/services/commercial',
       },
       {
         id: 'government',
@@ -51,7 +51,7 @@ export const servicesPageContent: ServicesPageContent = {
         description:
           'Trusted partner for government and institutional projects across all seven provinces. We have successfully delivered schools, hospitals, administrative buildings, and public infrastructure that serve communities and strengthen national development.',
         image: '/images/services/government.jpg',
-        href: '/services#government',
+        href: '/services/government',
       },
       {
         id: 'industrial',
@@ -59,7 +59,7 @@ export const servicesPageContent: ServicesPageContent = {
         description:
           'Purpose-built industrial facilities designed for efficiency, safety, and long-term operational excellence. We specialize in manufacturing plants, warehouses, processing facilities, and logistics centers tailored to your operational requirements.',
         image: '/images/services/industrial.jpg',
-        href: '/services#industrial',
+        href: '/services/industrial',
       },
       {
         id: 'infrastructure',
@@ -67,7 +67,7 @@ export const servicesPageContent: ServicesPageContent = {
         description:
           'Essential infrastructure that connects communities and drives economic growth. Our expertise spans roads, bridges, water systems, drainage networks, and urban development projects that form the backbone of Nepal\'s progress.',
         image: '/images/services/infrastructure.jpg',
-        href: '/services#infrastructure',
+        href: '/services/infrastructure',
       },
     ],
   },
@@ -78,6 +78,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Building',
       tagline: 'Building the Future',
       description: 'We mold spaces that inspire, innovate, and endure.',
+      bullets: ['Residential & commercial complexes', 'Institutional & government buildings', 'Earthquake-resistant structures'],
       image: '/images/services/service1.jpg',
       href: '/services/building',
     },
@@ -85,8 +86,8 @@ export const servicesPageContent: ServicesPageContent = {
       id: 'water-treatment',
       title: 'Water Treatment & Sanitation',
       tagline: 'Sanctuaries of Well-being',
-      description:
-        'Elevating living conditions with advanced water treatment and sanitation systems.',
+      description: 'Elevating living conditions with advanced water treatment and sanitation systems.',
+      bullets: ['Wastewater treatment plants', 'Sewerage & drainage systems', 'Community sanitation infrastructure'],
       image: '/images/services/service2.jpg',
       href: '/services/water-treatment',
     },
@@ -95,6 +96,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Road and Drain',
       tagline: 'Pathways of Progress',
       description: 'Crafting roads and drains that lead societies towards advancement.',
+      bullets: ['Urban & rural road construction', 'Stormwater drain networks', 'Pavement & bitumen works'],
       image: '/images/services/service3.jpg',
       href: '/services/road-drain',
     },
@@ -103,6 +105,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Airport',
       tagline: 'Taking Flight',
       description: 'Building gateways to possibilities with world-class airport construction.',
+      bullets: ['Runway & apron construction', 'Terminal & hangar buildings', 'Taxiway & airfield works'],
       image: '/images/services/service4.jpg',
       href: '/services/airport',
     },
@@ -111,6 +114,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Irrigation',
       tagline: 'Nurturing Growth',
       description: 'Engineering irrigation solutions that nurture landscapes and livelihoods.',
+      bullets: ['Canal & headworks construction', 'Distribution network systems', 'Agricultural water management'],
       image: '/images/services/service5.jpg',
       href: '/services/irrigation',
     },
@@ -119,6 +123,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Energy',
       tagline: 'Powering Progress',
       description: 'Energizing growth through cutting-edge energy infrastructure solutions.',
+      bullets: ['Hydropower civil works', 'Substation construction', 'Rural electrification infrastructure'],
       image: '/images/services/service6.jpg',
       href: '/services/energy',
     },
@@ -127,6 +132,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Water Supply',
       tagline: 'Fluid Connections',
       description: 'Ensuring communities thrive with efficient water supply networks.',
+      bullets: ['Distribution pipelines', 'Overhead reservoir construction', 'Intake & pump stations'],
       image: '/images/services/service-center.jpg',
       href: '/services/water-supply',
     },
@@ -135,6 +141,7 @@ export const servicesPageContent: ServicesPageContent = {
       title: 'Bridge and Culvert',
       tagline: 'Bridges to Unity',
       description: 'Connecting hearts and places through engineered bridges and culverts.',
+      bullets: ['RCC & steel bridges', 'Suspension footbridges', 'Box culverts & river crossings'],
       image: '/images/services/infrastructure.jpg',
       href: '/services/bridge-culvert',
     },

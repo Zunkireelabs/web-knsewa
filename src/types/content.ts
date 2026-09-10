@@ -103,6 +103,7 @@ export interface Project {
   contractValue?: string;
   year?: string;
   highlights: string[];
+  faq?: FAQItem[];
   images: {
     thumbnail: string;
     featured: string;
@@ -187,32 +188,13 @@ export interface CultureCommitment {
   };
 }
 
-// Careers Section
-export interface CareersContent {
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string;
-  primaryCta: {
-    text: string;
-    href: string;
-  };
-  secondaryCta?: {
-    text: string;
-    href: string;
-  };
-  stats?: {
-    value: string;
-    label: string;
-  }[];
-}
-
 // Specialization
 export interface Specialization {
   id: string;
   title: string;
   tagline: string;
   description: string;
+  bullets?: string[];
   image: string;
   href: string;
 }
@@ -322,15 +304,10 @@ export interface OfficeLocation {
   isHeadquarters?: boolean;
 }
 
-// Job Listing (Careers)
-export interface JobListing {
-  id: string;
-  title: string;
-  department: string;
-  location: string;
-  type: 'full-time' | 'part-time' | 'contract';
-  description: string;
-  requirements: string[];
+// FAQ
+export interface FAQItem {
+  question: string;
+  answer: string;
 }
 
 // Service Detail
@@ -338,8 +315,13 @@ export interface ServiceDetailContent {
   seo: SEOData;
   hero: PageHeroContent;
   overview: TwoColumnContent;
+  deliverables?: string[];
+  deliverablesIntro?: string;
   process: ProcessStep[];
+  communityImpact?: TwoColumnContent;
   relatedServices: ServiceCategory[];
+  cta: CTAContent;
+  faq?: FAQItem[];
 }
 
 // Process Step
@@ -382,6 +364,7 @@ export interface AboutPageContent {
     members: TeamMember[];
   };
   culture: CultureCommitment[];
+  faq?: FAQItem[];
   cta: CTAContent;
 }
 
@@ -450,26 +433,12 @@ export interface CoveragePageContent {
 export interface InsightsPageContent {
   seo: SEOData;
   hero: PageHeroContent;
+  stats: Stat[];
   listing: {
     label: string;
     headline: string;
     categories: string[];
   };
-  cta: CTAContent;
-}
-
-// Careers Page Content
-export interface CareersPageContent {
-  seo: SEOData;
-  hero: PageHeroContent;
-  introduction: TwoColumnContent;
-  culture: CultureCommitment[];
-  jobs: {
-    label: string;
-    headline: string;
-    listings: JobListing[];
-  };
-  stats: Stat[];
   cta: CTAContent;
 }
 
@@ -520,7 +489,6 @@ export interface HomePageContent {
   };
   coverage: TwoColumnContent;
   culture: CultureCommitment[];
-  careers: CareersContent;
   specializations: Specialization[];
   whyChooseUs: TwoColumnContent;
   cta: CTAContent;

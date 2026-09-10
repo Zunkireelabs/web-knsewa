@@ -259,7 +259,7 @@ export const aboutPageContent: AboutPageContent = {
       title: 'Performance',
       description:
         'With years of experience, our skilled professionals consistently exceed expectations, delivering high-quality construction services across buildings, roads, bridges, irrigation, water supply, airports, and energy infrastructure.',
-      image: '/images/projects/project-1.jpg',
+      image: '/images/commitments/safety-first.jpg',
       stats: {
         value: '500+',
         label: 'Projects delivered across Nepal',
@@ -270,7 +270,7 @@ export const aboutPageContent: AboutPageContent = {
       title: 'Visionary Leadership',
       description:
         'Our leadership inspires innovation and collaboration across every project. We lead with transparency, integrity, and accountability — setting the standard for construction excellence in Nepal.',
-      image: '/images/projects/project-2.jpg',
+      image: '/images/commitments/innovation-technology.jpg',
       stats: {
         value: '30+',
         label: 'Years of industry leadership',
@@ -281,7 +281,7 @@ export const aboutPageContent: AboutPageContent = {
       title: 'People First',
       description:
         'We prioritize people — clients, employees, and communities. Through open communication and collaboration, we build lasting relationships and create local jobs that strengthen the communities we serve.',
-      image: '/images/projects/project-3.jpg',
+      image: '/images/commitments/community-impact.jpg',
       stats: {
         value: '1,000+',
         label: 'Team members nationwide',
@@ -292,11 +292,34 @@ export const aboutPageContent: AboutPageContent = {
       title: 'Excellence in Every Detail',
       description:
         'Every project reflects our commitment to quality. From the Patan Secondary School recognized by government leadership to complex hospital and water treatment facilities, we deliver work that earns trust.',
-      image: '/images/projects/project-1.jpg',
+      image: '/images/commitments/uncompromising-quality.jpg',
       stats: {
         value: '7',
         label: 'Provinces with active operations',
       },
+    },
+  ],
+
+  faq: [
+    {
+      question: 'How long has Khushbu Nirman Sewa been in business?',
+      answer: 'Khushbu Nirman Sewa Pvt Ltd was founded in 1995 in Biratnagar, Morang. With over 30 years of experience, we are one of Nepal\'s most established construction contractors.',
+    },
+    {
+      question: 'Which areas of Nepal does KNSEWA serve?',
+      answer: 'We serve all seven provinces of Nepal. Headquartered in Biratnagar, our operations span from eastern Nepal to the Kathmandu Valley and beyond, with 500+ completed projects nationwide.',
+    },
+    {
+      question: 'What types of construction projects does KNSEWA handle?',
+      answer: 'KNSEWA delivers a full range of construction services including commercial buildings, government and institutional facilities, roads and bridges, water supply systems, irrigation infrastructure, energy projects (including 400KV transmission lines), and airport construction.',
+    },
+    {
+      question: 'Has KNSEWA received any government recognition?',
+      answer: 'Yes. KNSEWA received a Letter of Appreciation from Former Prime Minister KP Sharma Oli for the successful completion of Patan Secondary School at Patandhoka, Lalitpur District in 2020. We also earned recognition from Nepal Electricity Authority for exceptional project management on the Hetauda-Dhalkebar-Inaruwa 400KV transmission line.',
+    },
+    {
+      question: 'How large is the KNSEWA team?',
+      answer: 'Our team comprises 1,000+ professionals including civil engineers, sub-engineers, project managers, accountants, and on-site workers — enabling us to run multiple large-scale projects simultaneously across Nepal.',
     },
   ],
 

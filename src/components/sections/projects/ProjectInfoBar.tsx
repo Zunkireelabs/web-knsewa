@@ -42,6 +42,7 @@ export function ProjectInfoBar({ project }: ProjectInfoBarProps) {
         background: 'var(--color-gray-100)',
         borderTop: '1px solid var(--color-gray-200)',
         borderBottom: '1px solid var(--color-gray-200)',
+        padding: 0,
       }}
     >
       <div className="wrapper">

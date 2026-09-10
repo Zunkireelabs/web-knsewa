@@ -19,6 +19,7 @@ export function ProjectNav({ prev, next }: ProjectNavProps) {
       style={{
         background: 'var(--color-gray-100)',
         borderTop: '1px solid var(--color-gray-200)',
+        padding: 0,
       }}
     >
       <div className="wrapper">

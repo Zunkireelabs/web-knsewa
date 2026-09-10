@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import { ChevronDownIcon, ArrowIcon } from '@/components/ui/Icons';
+import { ChevronDownIcon } from '@/components/ui/Icons';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -79,17 +79,17 @@ export function CultureSection({
   };
 
   return (
-    <section ref={sectionRef} className="culture-section bg-[var(--color-primary)] py-20 lg:py-32">
+    <section ref={sectionRef} className="culture-section bg-[var(--color-primary)] pt-14 lg:pt-32">
       <div ref={contentRef} className="wrapper">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between" style={{ marginBottom: '3rem' }}>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between section-header" style={{ marginBottom: '3rem' }}>
           <div>
             <span className="section-label text-[var(--color-accent)]">{subtitle}</span>
             <h2 className="title fs-45 text-white mt-2">{title}</h2>
           </div>
 
           {/* Dropdown Selector */}
-          <div className="relative mt-6 lg:mt-0" style={{ zIndex: 30 }}>
+          <div className="relative mt-6 lg:mt-0 w-full lg:w-auto" style={{ zIndex: 30 }}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="culture-dropdown-toggle"
@@ -158,10 +158,7 @@ export function CultureSection({
                     </div>
                   )}
 
-                  <button className="btn-link white">
-                    Learn More
-                    <ArrowIcon className="w-4 h-4" />
-                  </button>
+
                 </div>
               </div>
             </SwiperSlide>

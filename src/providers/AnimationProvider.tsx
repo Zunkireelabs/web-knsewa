@@ -39,6 +39,12 @@ export function AnimationProvider({ children }: AnimationProviderProps) {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    // Prevent browser from restoring scroll position on navigation
+    if (typeof window !== 'undefined') {
+      history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    }
+
     // Initialize Lenis smooth scroll
     const lenisInstance = new Lenis({
       duration: 1.2,
@@ -84,16 +90,39 @@ export function AnimationProvider({ children }: AnimationProviderProps) {
   lenisRef.current = lenis;
 
   useLayoutEffect(() => {
-    // After new route mounts, refresh ScrollTrigger for new page content
-    ScrollTrigger.refresh();
+    // Reset scroll immediately when new route mounts (before paint)
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0, 0);
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+
+    // Defer refresh until after child useEffects have run (pin spacers are added)
+    // Double-RAF ensures we're past the React commit + browser paint cycle
+    let raf1 = 0;
+    let raf2 = 0;
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        // Re-assert scroll position after pin spacers may have shifted layout
+        document.documentElement.scrollTop = 0;
+        window.scrollTo(0, 0);
+        if (lenisRef.current) {
+          lenisRef.current.scrollTo(0, { immediate: true });
+        }
+        ScrollTrigger.refresh();
+      });
+    });
 
     return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
       // CLEANUP: runs BEFORE next route's DOM mutations
       // Kill all ScrollTriggers (removes pin spacers, restores DOM tree)
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.killTweensOf('*');
 
       // Reset scroll position
+      document.documentElement.scrollTop = 0;
       window.scrollTo(0, 0);
       if (lenisRef.current) {
         lenisRef.current.scrollTo(0, { immediate: true });

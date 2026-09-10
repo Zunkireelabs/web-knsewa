@@ -172,7 +172,7 @@ export function ServicesPhilosophy({ quote, description }: ServicesPhilosophyPro
           <div
             ref={imageRef}
             style={{ position: 'relative', overflow: 'hidden', borderRadius: 16 }}
-            className="aspect-[4/5] lg:aspect-[3/4]"
+            className="aspect-[16/10] sm:aspect-[4/5] lg:aspect-[3/4]"
           >
             <Image
               src="/images/services/commercial.jpg"

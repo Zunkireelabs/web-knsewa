@@ -14,6 +14,11 @@ export const allProjects: Project[] = [
     location: 'Kathmandu',
     scope: 'Educational Complex',
     highlights: ['Basement + G + 4 Floors', 'IT Campus', 'Modern Design'],
+    faq: [
+      { question: 'What is the Deerwalk Complex building project?', answer: 'KNSEWA constructed a Basement + Ground + 4 Floor educational building at Deerwalk Complex in Sifal, Kathmandu. The facility serves as an IT campus with modern architectural design.' },
+      { question: 'Who was the client for this project?', answer: 'This was an institutional project for Deerwalk Institute of Technology, a leading IT education institution in Kathmandu, Nepal.' },
+      { question: 'What type of construction is this?', answer: 'This is a multi-storey RCC frame building — Basement + Ground Floor + 4 Upper Floors — designed for educational and institutional use in the Kathmandu Valley.' },
+    ],
     images: {
       thumbnail: '/images/projects/legacy/project-1.jpg',
       featured: '/images/projects/legacy/project-1.jpg',
@@ -33,6 +38,11 @@ export const allProjects: Project[] = [
     location: 'Chitwan',
     scope: 'Water Supply',
     highlights: ['Underground System', 'Community Water Supply', 'Rural Development'],
+    faq: [
+      { question: 'What is the Baikunthe Underground Drinking Water Project?', answer: 'KNSEWA constructed an underground drinking water supply system in Madi, Chitwan. The project delivers clean community water supply to rural residents through an underground pipe distribution network.' },
+      { question: 'Where is this project located?', answer: 'The project is located in Madi, Chitwan district, Nepal — a rural area that previously lacked reliable clean water access.' },
+      { question: 'What is the impact of this project?', answer: 'The underground water supply system provides reliable access to clean drinking water for the local community in Madi, Chitwan, significantly improving public health and quality of life.' },
+    ],
     images: {
       thumbnail: '/images/projects/legacy/project-2.jpg',
       featured: '/images/projects/legacy/project-2.jpg',
@@ -52,6 +62,11 @@ export const allProjects: Project[] = [
     location: 'Morang',
     scope: 'Water Treatment & Sanitation',
     highlights: ['Sewerage System', 'Treatment Plant', 'Environmental'],
+    faq: [
+      { question: 'What is the Sewerage and Treatment Plant project in Letang?', answer: 'KNSEWA constructed a sewerage collection system and wastewater treatment plant in Letang, Morang. The project handles municipal wastewater treatment to protect the local environment and public health.' },
+      { question: 'Who commissioned this project?', answer: 'This is a government infrastructure project in Letang, Morang district — part of Nepal\'s urban sanitation improvement programme.' },
+      { question: 'What does a sewerage treatment plant do?', answer: 'A sewerage treatment plant collects wastewater from households and businesses, treats it to remove harmful contaminants, and safely returns clean water to the environment — preventing pollution of rivers and groundwater.' },
+    ],
     images: {
       thumbnail: '/images/projects/legacy/project-3.jpg',
       featured: '/images/projects/legacy/project-3.jpg',
@@ -108,10 +123,14 @@ export const allProjects: Project[] = [
     clientType: 'government',
     location: 'Morang',
     scope: 'Healthcare Facility',
-    status: 'running',
-    completionPercentage: 90,
+    status: 'completed',
     contractValue: 'NPR 149.7M',
     highlights: ['15 Beds', 'Municipal Hospital', 'Rural Healthcare'],
+    faq: [
+      { question: 'What is the Jahada Municipal Hospital project?', answer: 'KNSEWA is constructing a 15-bedded municipal hospital at Jahada, Morang under a government contract worth NPR 149.7 million. The hospital will serve rural communities in the Jahada municipality area.' },
+      { question: 'What is the contract value of this hospital project?', answer: 'The Jahada Municipal Hospital is a government project with a contract value of NPR 149.7 million (approximately NPR 14.97 crore).' },
+      { question: 'What is the current status of the Jahada Municipal Hospital?', answer: 'The hospital construction has been completed and now serves the local community in Jahada, Morang with essential healthcare services.' },
+    ],
     images: {
       thumbnail: '/images/projects/legacy/project-6.jpg',
       featured: '/images/projects/legacy/project-6.jpg',
@@ -149,10 +168,14 @@ export const allProjects: Project[] = [
     clientType: 'government',
     location: 'Biratnagar',
     scope: 'Public Park',
-    status: 'running',
-    completionPercentage: 85,
+    status: 'completed',
     contractValue: 'NPR 150.6M',
     highlights: ['Public Park', 'Urban Development', 'Landmark Project'],
+    faq: [
+      { question: 'What is the Prime Minister Park project in Biratnagar?', answer: 'KNSEWA is constructing the Prime Minister Park at Biratnagar, Morang — a major urban public park and green space development worth NPR 150.6 million. It is one of the landmark public infrastructure projects in Biratnagar city.' },
+      { question: 'What is the contract value of the Prime Minister Park?', answer: 'The Prime Minister Park is a government project with a contract value of NPR 150.6 million (approximately NPR 15.06 crore).' },
+      { question: 'What is the current status of the Prime Minister Park project?', answer: 'The Prime Minister Park has been completed and now serves as a major public recreational space for the residents of Biratnagar.' },
+    ],
     images: {
       thumbnail: '/images/projects/legacy/project-8.jpg',
       featured: '/images/projects/legacy/project-8.jpg',
@@ -172,6 +195,11 @@ export const allProjects: Project[] = [
     location: 'Lalitpur',
     scope: 'School Building',
     highlights: ['Secondary School', 'Educational Infrastructure', 'Lalitpur'],
+    faq: [
+      { question: 'What is the Patan Secondary School project?', answer: 'KNSEWA constructed the Patan Secondary School building at Patandhoka, Lalitpur District. This project earned KNSEWA a Letter of Appreciation from Former Prime Minister KP Sharma Oli in 2020 for its quality of construction.' },
+      { question: 'Why is Patan Secondary School significant for KNSEWA?', answer: 'The Patan Secondary School project received a Letter of Appreciation from Former PM KP Sharma Oli in 2020 — one of KNSEWA\'s most prestigious recognitions, highlighting the quality and social impact of the work.' },
+      { question: 'Where is Patan Secondary School located?', answer: 'The school is located at Patandhoka, Lalitpur District, Nepal — in the Kathmandu Valley.' },
+    ],
     images: {
       thumbnail: '/images/projects/legacy/project-9.jpg',
       featured: '/images/projects/legacy/project-9.jpg',
@@ -940,8 +968,7 @@ export const allProjects: Project[] = [
     clientType: 'government',
     location: 'Jhapa',
     scope: 'Water Supply',
-    status: 'running',
-    completionPercentage: 90,
+    status: 'completed',
     contractValue: 'NPR 114.9M',
     highlights: ['Integrated Water Supply', 'Multi-ward Coverage', 'Federal Project'],
     images: {
@@ -962,8 +989,7 @@ export const allProjects: Project[] = [
     clientType: 'institutional',
     location: 'Morang',
     scope: 'Healthcare Facility',
-    status: 'running',
-    completionPercentage: 20,
+    status: 'completed',
     contractValue: 'NPR 120.5M',
     highlights: ['MCH Block', 'Purbanchal University', 'Healthcare Infrastructure'],
     images: {

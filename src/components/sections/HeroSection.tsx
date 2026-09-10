@@ -130,7 +130,7 @@ export function HeroSection({ content }: HeroSectionProps) {
       {/* Scroll Indicator */}
       <div
         ref={scrollIndicatorRef}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-4 text-white opacity-0"
+        className="absolute bottom-8 sm:bottom-5 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-4 text-white opacity-0"
       >
         <span className="text-sm font-medium tracking-wider uppercase">Scroll</span>
         <div className="scroll-indicator-line">

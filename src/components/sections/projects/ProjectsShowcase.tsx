@@ -21,6 +21,8 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const mobileContainerRef = useRef<HTMLDivElement>(null);
   const mmRef = useRef<gsap.MatchMedia | null>(null);
 
   // Pick 4 best projects for showcase (varied categories, with good images)
@@ -102,6 +104,36 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
       };
     });
 
+    mm.add('(max-width: 1023px)', () => {
+      const mobileTrack = mobileTrackRef.current;
+      const mobileContainer = mobileContainerRef.current;
+      if (!mobileTrack || !mobileContainer) return;
+
+      const totalWidth = mobileTrack.scrollWidth;
+      const viewportWidth = mobileContainer.offsetWidth;
+      const scrollDistance = totalWidth - viewportWidth;
+      if (scrollDistance <= 0) return;
+
+      const tween = gsap.to(mobileTrack, {
+        x: -scrollDistance,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.6,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      return () => {
+        tween.kill();
+        ScrollTrigger.getAll()
+          .filter((t) => t.trigger === section)
+          .forEach((t) => t.kill());
+      };
+    });
+
     mmRef.current = mm;
   }, []);
 
@@ -120,7 +152,7 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
       className="showcase-section"
       style={{
         background: 'var(--color-primary)',
-        minHeight: '100vh',
+        minHeight: '100svh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -155,8 +187,8 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
         {/* Header */}
         <div
           style={{
-            paddingLeft: 'max(2rem, calc((100vw - 1440px) / 2 + 2rem))',
-            paddingRight: '2rem',
+            paddingLeft: 'max(1rem, calc((100vw - 1440px) / 2 + 2rem))',
+            paddingRight: 'max(1rem, 2rem)',
             marginBottom: 'clamp(2rem, 3.5vw, 3rem)',
             display: 'flex',
             alignItems: 'flex-end',
@@ -166,7 +198,7 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
           <div>
             <p
               style={{
-                fontSize: '0.6875rem',
+                fontSize: '0.75rem',
                 fontWeight: 500,
                 textTransform: 'uppercase',
                 letterSpacing: '0.2em',
@@ -201,8 +233,8 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
           </p>
         </div>
 
-        {/* Horizontal track */}
-        <div ref={containerRef} style={{ overflow: 'hidden' }}>
+        {/* ── Desktop: horizontal GSAP track (1024px+) ── */}
+        <div ref={containerRef} className="hidden lg:block" style={{ overflow: 'hidden' }}>
           <div
             ref={trackRef}
             style={{
@@ -373,6 +405,95 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
                     }}
                   >
                     View Details <ArrowRight width={20} height={8} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Mobile/tablet: scroll-driven horizontal translate (below 1024px) ── */}
+        <div ref={mobileContainerRef} className="lg:hidden" style={{ overflow: 'hidden' }}>
+          <div
+            ref={mobileTrackRef}
+            style={{
+              display: 'flex',
+              gap: '1rem',
+              paddingLeft: '1.25rem',
+              paddingRight: '1.25rem',
+              willChange: 'transform',
+            }}
+          >
+            {featured.map((project) => (
+              <Link
+                key={project.id}
+                href={`/projects/${project.slug}`}
+                className="showcase-card"
+                style={{
+                  flexShrink: 0,
+                  width: 'min(80vw, 320px)',
+                  scrollSnapAlign: 'start',
+                  position: 'relative',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  display: 'block',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'relative',
+                    aspectRatio: '4/3',
+                    overflow: 'hidden',
+                    background: 'var(--color-gray-200)',
+                  }}
+                >
+                  <Image
+                    src={project.images.featured}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(180deg, transparent 40%, rgba(23,23,27,0.9) 100%)',
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: 'absolute',
+                      top: '1rem',
+                      right: '1rem',
+                      fontSize: '0.6875rem',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      color: 'var(--color-white)',
+                      background: 'rgba(11,93,208,0.4)',
+                      backdropFilter: 'blur(8px)',
+                      padding: '0.3rem 0.625rem',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    {project.category}
+                  </span>
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem' }}>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 500, lineHeight: 1.2, color: 'var(--color-white)', marginBottom: '0.25rem' }}>
+                      {project.title}
+                    </h3>
+                    <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
+                      {project.location}
+                    </p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1.25rem', background: 'rgba(255,255,255,0.03)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>{project.scope}</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 500, color: 'var(--color-accent)', display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}>
+                    View <ArrowRight width={16} height={6} />
                   </span>
                 </div>
               </Link>

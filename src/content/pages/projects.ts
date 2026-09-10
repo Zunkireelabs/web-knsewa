@@ -54,13 +54,18 @@ export const projectsPageContent: ProjectsPageContent = {
         'RCC Frame Structure (7 Storey) with Double Basement including Brick Masonry, Plaster, Electrical, Sanitary, Landscaping, HVAC, Lift Machine Fixing, Structural Steel Work.',
       location: 'Sifal, Kathmandu',
       scope: 'New Construction',
-      status: 'running',
+      status: 'completed',
       year: '2022',
       highlights: [
         '7-storey RCC frame structure',
         'Double basement',
         'HVAC & lift installation',
         'Full landscaping',
+      ],
+      faq: [
+        { question: 'What is the Deerwalk Complex building project?', answer: 'KNSEWA constructed a 7-storey RCC frame structure with double basement at Deerwalk Complex in Sifal, Kathmandu for Deerwalk Group Limited. The building includes HVAC, lift systems, and full landscaping for an IT campus.' },
+        { question: 'Who was the client for the Deerwalk Complex project?', answer: 'The client was Deerwalk Group Limited, a leading IT education institution based in Kathmandu, Nepal.' },
+        { question: 'What type of construction is the Deerwalk Complex?', answer: 'It is a 7-storey RCC frame structure with double basement, designed for institutional and educational use, including brick masonry, electrical and sanitary work, HVAC systems, and lift installation.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-1/p1-6-small.jpg',
@@ -92,12 +97,17 @@ export const projectsPageContent: ProjectsPageContent = {
         'Over Head Tank (OHT) Construction, Pipe laying & jointing of different sizes along with household connection around the Baikunthe Underground Drinking Water Project.',
       location: 'Madi, Chitwan',
       scope: 'Water Supply',
-      status: 'running',
+      status: 'completed',
       year: '2022',
       highlights: [
         'Overhead tank construction',
         'Pipe laying & jointing',
         'Household connections',
+      ],
+      faq: [
+        { question: 'What is the Baikunthe Underground Drinking Water Project?', answer: 'KNSEWA constructed an underground drinking water supply system in Madi, Chitwan, including overhead tank construction, pipe laying and jointing, and household water connections for the local community.' },
+        { question: 'Who commissioned the Baikunthe water project?', answer: 'The project was commissioned by the Madi Integrated Inclusive Sustainable Development Project — a government initiative to improve rural water access in Madi, Chitwan.' },
+        { question: 'What does this project deliver to the community?', answer: 'The project delivers reliable clean drinking water to households in Madi, Chitwan through an underground pipe distribution network connected to an overhead storage tank.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-2/p2-small.jpg',
@@ -123,13 +133,18 @@ export const projectsPageContent: ProjectsPageContent = {
         'Treatment Plant (2 No), Pipe laying & jointing, Sewer Line Works with Chamber, 2 Storey RCC Building, Guard House, Compound Wall, Landscaping, Settling Tank, Approach Channel, Bar Screening, Oil & Grease Separator, Grit Pit, Drying Bed & Reed Bed.',
       location: 'Letang, Morang',
       scope: 'Water Treatment',
-      status: 'running',
+      status: 'completed',
       year: '2019',
       highlights: [
         '2 treatment plants',
         'Complete sewer line system',
         '2-storey RCC building',
         'Deep tube well',
+      ],
+      faq: [
+        { question: 'What is the Sewerage and Treatment Plant project in Letang?', answer: 'KNSEWA constructed 2 sewerage treatment plants and a complete sewer line network in Letang, Morang. The project includes a 2-storey RCC building, guard house, compound wall, landscaping, settling tanks, bar screening, and grit pits.' },
+        { question: 'Who was the client for the Letang sewerage project?', answer: 'The project was commissioned by the Federal Water Supply & Sewerage Management Project, Biratnagar — a government body managing urban sanitation infrastructure in Nepal.' },
+        { question: 'What is the environmental impact of this project?', answer: 'The treatment plant safely processes municipal wastewater from Letang, preventing untreated sewage from polluting local rivers and groundwater, protecting public health and the environment.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-3/p-3-small.jpg',
@@ -155,7 +170,7 @@ export const projectsPageContent: ProjectsPageContent = {
         'RCC Frame Structure (2 Storey) Building with RAMP Provision for all floors including Brick Masonry, Plaster, Electrical, Sanitary, Landscaping, HVAC, Lift Machine Fixing, Structural Steel Work. Includes Guard House and Mortuary Block.',
       location: 'Pathari, Morang',
       scope: 'New Construction',
-      status: 'running',
+      status: 'completed',
       year: '2021',
       highlights: [
         '15-bed hospital facility',
@@ -187,7 +202,7 @@ export const projectsPageContent: ProjectsPageContent = {
         'Double Lane 40m Long Prestressed Concrete (PSC) T Beam Bridge, Cast-in-situ RCC Pile of 800mm diameter (32 No x 16m) = 512 Rm, River Training and Protection Works, Wing Wall and Approach Road.',
       location: 'Pathari, Ward No-6, Morang',
       scope: 'Bridge Construction',
-      status: 'running',
+      status: 'completed',
       year: '2022',
       highlights: [
         '40m prestressed concrete bridge',
@@ -219,8 +234,7 @@ export const projectsPageContent: ProjectsPageContent = {
         'RCC Frame Structure (3 Storey) Building, 800mm thickness Raft/Mat Foundation and RAMP Provision for all floors including Brick Masonry, Plaster, Electrical, Sanitary, Landscaping, HVAC, Lift and Structural Steel Work. Includes Guard House and Mortuary Block.',
       location: 'Majhare, Morang',
       scope: 'New Construction',
-      status: 'running',
-      completionPercentage: 90,
+      status: 'completed',
       contractValue: 'NPR 149.7M',
       year: '2022',
       highlights: [
@@ -228,6 +242,11 @@ export const projectsPageContent: ProjectsPageContent = {
         '3-storey RCC structure',
         'Raft foundation (800mm)',
         'Full ramp accessibility',
+      ],
+      faq: [
+        { question: 'What is the Jahada Municipal Hospital project?', answer: 'KNSEWA is constructing a 15-bed municipal hospital for Jahada Rural Municipality in Majhare, Morang. The 3-storey RCC structure includes HVAC, lift, full ramp accessibility, a guard house, and mortuary block. Contract value: NPR 149.7 million.' },
+        { question: 'What is the contract value of the Jahada Municipal Hospital?', answer: 'The contract value is NPR 149.7 million (approximately NPR 14.97 crore). The project is commissioned by Jahada Rural Municipality, Morang.' },
+        { question: 'What is the current completion status?', answer: 'The Jahada Municipal Hospital has been completed and now serves as the primary healthcare facility for the Jahada rural community in Morang district.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-6/p-6-small.jpg',
@@ -254,7 +273,7 @@ export const projectsPageContent: ProjectsPageContent = {
         'RCC Frame Structure Building including Brick Masonry, Plaster, Electrical, Sanitary, Landscaping, HVAC. Also includes Guard House, Canteen Block, Generator Shed, Vehicle Parking Shed and Boundary Wall of 250m.',
       location: 'Jahada-5, Majhare, Morang',
       scope: 'New Construction',
-      status: 'running',
+      status: 'completed',
       year: '2022',
       highlights: [
         'Full administration complex',
@@ -288,8 +307,7 @@ export const projectsPageContent: ProjectsPageContent = {
         'Boundary Wall, Decorative Boundary Wall, Drainage, Main Entrance Gate, Foot Deck, Foot Over Bridge, Monument Area, Open Air Theater, Pedestrian Open Statue Museum, PM Statue, Swimming Pool, Gazebo, GYM Centre, Landscaping and Beautification.',
       location: 'Biratnagar, Morang',
       scope: 'New Construction',
-      status: 'running',
-      completionPercentage: 85,
+      status: 'completed',
       contractValue: 'NPR 150.6M',
       year: '2022',
       highlights: [
@@ -297,6 +315,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Swimming pool & gym',
         'Statue museum',
         'Complete landscaping',
+      ],
+      faq: [
+        { question: 'What is the Prime Minister Park project in Biratnagar?', answer: 'KNSEWA is constructing the Prime Minister Park for Biratnagar Metropolitan City — a major public park featuring an open air theater, swimming pool, gym centre, PM statue museum, foot over bridge, and complete landscaping. Contract value: NPR 150.6 million.' },
+        { question: 'What facilities does Prime Minister Park include?', answer: 'The park includes a boundary wall, main entrance gate, foot deck, foot over bridge, monument area, open air theater, pedestrian open statue museum, PM statue, swimming pool, gazebo, gym centre, and full landscaping.' },
+        { question: 'What is the current status of Prime Minister Park?', answer: 'The Prime Minister Park has been completed and stands as one of the largest urban public development projects in Biratnagar, commissioned by Biratnagar Metropolitan City.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-8/1.jpg',
@@ -328,6 +351,11 @@ export const projectsPageContent: ProjectsPageContent = {
         '4-storey retrofitting',
         '3,409 sqm built-up area',
         'PM recognition award',
+      ],
+      faq: [
+        { question: 'What is the Patan Secondary School project?', answer: 'KNSEWA completed the retrofitting and renovation of Patan Secondary School at Patandhoka, Lalitpur — Nepal\'s 2nd oldest school. The project involved a 4-storey RCC frame structure with raft foundation, totalling 3,409 sqm built-up area.' },
+        { question: 'Why is Patan Secondary School significant for KNSEWA?', answer: 'This project earned KNSEWA a Letter of Appreciation from Former Prime Minister KP Sharma Oli in 2020, recognising the quality of construction and the social importance of preserving one of Nepal\'s oldest educational institutions.' },
+        { question: 'Who was the client for the Patan Secondary School?', answer: 'The project was commissioned by the Central Level Project Implementation Unit, Kathmandu — a government body overseeing educational infrastructure across Nepal.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-9/top-view-small.jpg',
@@ -1311,8 +1339,7 @@ export const projectsPageContent: ProjectsPageContent = {
       description: 'Entire construction work of Timai Shantinagar integrated water supply project covering Buddhashanti Rural Municipality wards 4, 5, 6 & 7 in Jhapa district.',
       location: 'Buddhashanti Municipality, Jhapa',
       scope: 'Water Supply',
-      status: 'running',
-      completionPercentage: 90,
+      status: 'completed',
       contractValue: 'NPR 114.9M',
       year: '2024',
       highlights: [
@@ -1341,8 +1368,7 @@ export const projectsPageContent: ProjectsPageContent = {
       description: 'Construction of ground floor of MCH (Maternal and Child Health) block at Purbanchal University, Sundarharaincha, Gothgaun, Morang.',
       location: 'Sundarharaincha, Gothgaun, Morang',
       scope: 'Healthcare Facility',
-      status: 'running',
-      completionPercentage: 20,
+      status: 'completed',
       contractValue: 'NPR 120.5M',
       year: '2025',
       highlights: [
