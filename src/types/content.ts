@@ -9,6 +9,9 @@ export interface SiteSettings {
     city: string;
     country: string;
   };
+  // Additional office locations shown alongside the primary address (footer, contact panel).
+  // Kept as simple display strings — the primary `address` above remains the one used in SEO/JSON-LD.
+  additionalLocations?: string[];
   social: {
     facebook?: string;
     instagram?: string;
@@ -296,7 +299,7 @@ export interface OfficeLocation {
   id: string;
   name: string;
   address: string;
-  phone: string;
+  phone?: string;
   email: string;
   hours?: string;
   mapUrl?: string;

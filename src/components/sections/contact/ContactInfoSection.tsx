@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { GridLines } from '@/components/ui/GridLines';
 import { AnimatedElement, StaggerContainer } from '@/components/ui/AnimatedElement';
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, ArrowRight } from '@/components/ui/Icons';
@@ -14,7 +14,9 @@ interface ContactInfoSectionProps {
 }
 
 export function ContactInfoSection({ label, headline, description, offices }: ContactInfoSectionProps) {
-  const hq = offices.find((o) => o.isHeadquarters) ?? offices[0];
+  const defaultOffice = offices.find((o) => o.isHeadquarters) ?? offices[0];
+  const [activeOfficeId, setActiveOfficeId] = useState(defaultOffice.id);
+  const hq = offices.find((o) => o.id === activeOfficeId) ?? defaultOffice;
 
   return (
     <section
@@ -77,20 +79,41 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
           </div>
 
           {/* Right: cards stacked vertically */}
-          <StaggerContainer stagger={0.08} className="contact-info-cards">
-            {/* Phone Card */}
-            <a href={`tel:${hq.phone}`} className="contact-info-card">
-              <div className="contact-info-icon">
-                <PhoneIcon width={22} height={22} />
+          <div style={{ width: '100%', maxWidth: '420px', margin: '0 auto' }}>
+            {offices.length > 1 && (
+              <div className="office-switcher" role="tablist" aria-label="Select office location">
+                {offices.map((office) => (
+                  <button
+                    key={office.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={office.id === hq.id}
+                    data-active={office.id === hq.id}
+                    onClick={() => setActiveOfficeId(office.id)}
+                    className="office-switcher-tab"
+                  >
+                    {office.isHeadquarters ? 'Headquarters' : office.address.split(',')[0]}
+                  </button>
+                ))}
               </div>
-              <div>
-                <p className="contact-info-eyebrow">Call Us</p>
-                <p className="contact-info-value">{hq.phone}</p>
-                <span className="contact-info-link">
-                  Tap to call <ArrowRight width={20} height={8} />
-                </span>
-              </div>
-            </a>
+            )}
+
+            <StaggerContainer stagger={0.08} className="contact-info-cards">
+              {/* Phone Card */}
+              {hq.phone && (
+                <a href={`tel:${hq.phone}`} className="contact-info-card">
+                  <div className="contact-info-icon">
+                    <PhoneIcon width={22} height={22} />
+                  </div>
+                  <div>
+                    <p className="contact-info-eyebrow">Call Us</p>
+                    <p className="contact-info-value">{hq.phone}</p>
+                    <span className="contact-info-link">
+                      Tap to call <ArrowRight width={20} height={8} />
+                    </span>
+                  </div>
+                </a>
+              )}
 
             {/* Email Card */}
             <a href={`mailto:${hq.email}`} className="contact-info-card">
@@ -139,7 +162,8 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
                 </div>
               </div>
             )}
-          </StaggerContainer>
+            </StaggerContainer>
+          </div>
         </div>
 
         {/* Map Embed */}
@@ -169,6 +193,27 @@ export function ContactInfoSection({ label, headline, description, offices }: Co
       </div>
 
       <style jsx>{`
+        .office-switcher {
+          display: flex;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .office-switcher-tab {
+          font-size: 0.8125rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 999px;
+          border: 1px solid var(--color-gray-200);
+          background: var(--color-white);
+          color: var(--color-gray-600);
+          cursor: pointer;
+          transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .office-switcher-tab[data-active='true'] {
+          background: var(--color-primary);
+          border-color: var(--color-primary);
+          color: var(--color-white);
+        }
         .contact-info-layout {
           display: grid;
           grid-template-columns: 1fr 1fr;

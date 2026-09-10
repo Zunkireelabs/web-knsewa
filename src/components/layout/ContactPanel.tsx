@@ -152,6 +152,12 @@ export function ContactPanel({ isOpen, onClose, settings }: ContactPanelProps) {
                   {settings.address.city}, {settings.address.country}
                 </span>
               </div>
+              {settings.additionalLocations?.map((location) => (
+                <div className="flex items-start gap-3 text-[var(--color-gray-600)]" key={location}>
+                  <MapPinIcon className="w-5 h-5 mt-0.5" />
+                  <span>{location}</span>
+                </div>
+              ))}
             </div>
 
             {/* Divider */}

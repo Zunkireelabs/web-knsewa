@@ -56,6 +56,12 @@ export function Footer({ settings, navigation }: FooterProps) {
                   {settings.address.street}, {settings.address.country}
                 </span>
               </div>
+              {settings.additionalLocations?.map((location) => (
+                <div className="footer-contact-item" key={location}>
+                  <MapPinIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                  <span>{location}</span>
+                </div>
+              ))}
             </div>
 
             {/* Social Links */}

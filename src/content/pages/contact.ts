@@ -62,6 +62,14 @@ export const contactPageContent: ContactPageContent = {
         'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3565.1!2d87.2718!3d26.4525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBiratnagar%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000',
       isHeadquarters: true,
     },
+    {
+      id: 'kathmandu-office',
+      name: 'Khushbu Nirman Sewa Pvt Ltd — Kathmandu Office',
+      address: 'Kathmandu, Nepal',
+      // Phone number pending from client — omit until provided rather than show a placeholder.
+      email: 'info@knsewa.com',
+      isHeadquarters: false,
+    },
   ],
 
   cta: {

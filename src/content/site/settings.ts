@@ -10,6 +10,7 @@ export const siteSettings: SiteSettings = {
     city: 'Biratnagar',
     country: 'Nepal',
   },
+  additionalLocations: ['Kathmandu, Nepal'],
   social: {
     facebook: 'https://facebook.com/khushbunirman.sewa.1',
   },
