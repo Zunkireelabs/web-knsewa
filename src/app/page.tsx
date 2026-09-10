@@ -84,7 +84,7 @@ export default function HomePage() {
         "name": "Where is Khushbu Nirman Sewa located?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Khushbu Nirman Sewa is located in Biratnagar, Morang, Nepal. They can be reached at 021-503204 or khushbunirmansewa@gmail.com.",
+          "text": "Khushbu Nirman Sewa is located in Biratnagar, Morang, Nepal. They can be reached at 021-503204 or info@knsewa.com.",
         },
       },
       {

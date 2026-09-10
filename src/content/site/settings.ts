@@ -4,7 +4,7 @@ export const siteSettings: SiteSettings = {
   name: 'Khushbu Nirman Sewa',
   tagline: 'Building Nepal\'s Future for 30 Years',
   phone: '021-503204',
-  email: 'khushbunirmansewa@gmail.com',
+  email: 'info@knsewa.com',
   address: {
     street: 'Biratnagar, Morang',
     city: 'Biratnagar',

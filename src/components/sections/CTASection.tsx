@@ -158,8 +158,8 @@ export function CTASection({ content }: CTASectionProps) {
                 <div className="cta-v2-trust-item">
                   <div>
                     <p className="cta-v2-trust-label">Email Us</p>
-                    <a href="mailto:khushbunirmansewa@gmail.com" className="cta-v2-trust-value">
-                      khushbunirmansewa@gmail.com
+                    <a href="mailto:info@knsewa.com" className="cta-v2-trust-value">
+                      info@knsewa.com
                     </a>
                   </div>
                 </div>
