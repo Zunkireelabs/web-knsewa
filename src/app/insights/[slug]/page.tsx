@@ -175,51 +175,50 @@ export default async function ArticlePage({
         </div>
       </section>
 
-      {/* Article body */}
-      <article
-        className="wrapper"
-        style={{
-          padding: `clamp(3rem, 6vw, 5rem) var(--container-padding) ${
-            article.faq && article.faq.length > 0 ? '0' : 'clamp(3rem, 6vw, 5rem)'
-          }`,
-        }}
-      >
-        <div className="max-w-[720px] mx-auto">
-          <Link
-            href="/insights/"
-            className="inline-flex items-center gap-2 fs-16 font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-white)] hover:bg-[var(--color-accent)]"
-            style={{
-              background: 'var(--color-gray-100)',
-              padding: '0.5rem 1rem',
-              borderRadius: '999px',
-              marginBottom: 'clamp(2rem, 4vw, 3rem)',
-            }}
-          >
-            ← All Insights
-          </Link>
-
-          <div
-            style={{
-              borderLeft: '3px solid var(--color-accent)',
-              paddingLeft: 'clamp(1.25rem, 2.5vw, 1.75rem)',
-              margin: '0 0 2.5rem',
-            }}
-          >
-            <p
-              className="fs-19 text-[var(--color-primary)]"
-              style={{ opacity: 0.85, textAlign: 'left', lineHeight: 1.6, fontWeight: 400 }}
+      {/* Article body — text left, FAQ right (when available) */}
+      <article className="wrapper" style={{ padding: 'clamp(3rem, 6vw, 5rem) var(--container-padding)' }}>
+        <div
+          className={`grid grid-cols-1 ${article.faq && article.faq.length > 0 ? 'lg:grid-cols-2' : ''} gap-x-16 gap-y-12`}
+        >
+          <div className={article.faq && article.faq.length > 0 ? '' : 'max-w-[720px]'}>
+            <Link
+              href="/insights/"
+              className="inline-flex items-center gap-2 fs-16 font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-white)] hover:bg-[var(--color-accent)]"
+              style={{
+                background: 'var(--color-gray-100)',
+                padding: '0.5rem 1rem',
+                borderRadius: '999px',
+                marginBottom: 'clamp(2rem, 4vw, 3rem)',
+              }}
             >
-              {article.excerpt}
-            </p>
+              ← All Insights
+            </Link>
+
+            <div
+              style={{
+                borderLeft: '3px solid var(--color-accent)',
+                paddingLeft: 'clamp(1.25rem, 2.5vw, 1.75rem)',
+                margin: '0 0 2.5rem',
+              }}
+            >
+              <p
+                className="fs-19 text-[var(--color-primary)]"
+                style={{ opacity: 0.85, textAlign: 'left', lineHeight: 1.6, fontWeight: 400 }}
+              >
+                {article.excerpt}
+              </p>
+            </div>
+
+            <ArticleShareBar url={`https://knsewa.com/insights/${slug}/`} title={article.title} />
           </div>
 
-          <ArticleShareBar url={`https://knsewa.com/insights/${slug}/`} title={article.title} />
+          {article.faq && article.faq.length > 0 && (
+            <div>
+              <ServiceFAQSection faqs={article.faq} variant="panel" />
+            </div>
+          )}
         </div>
       </article>
-
-      {article.faq && article.faq.length > 0 && (
-        <ServiceFAQSection faqs={article.faq} />
-      )}
 
       {related.length > 0 && <RelatedInsights articles={related} />}
 
