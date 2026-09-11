@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowIcon } from '@/components/ui/Icons';
+import { ArrowIcon, ArrowRight } from '@/components/ui/Icons';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import type { NewsArticle } from '@/types/content';
 
@@ -69,6 +69,15 @@ export function NewsInsightsSection({
             </div>
           </div>
         </div>
+
+        {/* See All Insights Link */}
+        <AnimatedElement delay={0.4}>
+          <div className="projects-see-all">
+            <Link href="/insights" className="btn-link">
+              See All Insights <ArrowRight />
+            </Link>
+          </div>
+        </AnimatedElement>
       </div>
     </section>
   );
