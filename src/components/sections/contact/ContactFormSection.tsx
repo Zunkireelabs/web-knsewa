@@ -15,6 +15,11 @@ interface ContactFormSectionProps {
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
+// Google Apps Script web app — appends each submission to the KNSEWA Website
+// Leads sheet and emails a notification. See docs/leads-integration/apps-script.gs.
+const LEADS_ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbwh-HuwZGb4DwJzvL40TGHzMU4grD4KdvfR6RQeC8A3sg9-K-lGWENjvV4AQElWQO1D/exec';
+
 const initialFormData = {
   name: '',
   email: '',
@@ -22,6 +27,7 @@ const initialFormData = {
   company: '',
   projectType: '',
   message: '',
+  website: '', // honeypot — real visitors never fill this in
 };
 
 export function ContactFormSection({
@@ -34,8 +40,6 @@ export function ContactFormSection({
   const [formData, setFormData] = useState(initialFormData);
   const [state, setState] = useState<SubmitState>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-
-  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -66,31 +70,24 @@ export function ContactFormSection({
     setState('submitting');
     setErrorMessage('');
 
-    if (!accessKey) {
-      openMailtoFallback();
-      setState('idle');
-      return;
-    }
-
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      // Content-Type must stay "text/plain" here — Apps Script web apps
+      // don't handle CORS preflight (OPTIONS) requests, and text/plain
+      // keeps this a "simple request" that skips preflight entirely.
+      // The body is still JSON; the script parses it with JSON.parse.
+      const res = await fetch(LEADS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `KNSEWA Website Inquiry — ${formData.projectType || 'General'}`,
-          from_name: 'KNSEWA Website',
-          ...formData,
-        }),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(formData),
       });
 
-      const data: { success?: boolean; message?: string } = await res.json();
+      const data: { success?: boolean; error?: string } = await res.json();
 
       if (res.ok && data.success) {
         setState('success');
         setFormData(initialFormData);
       } else {
-        setErrorMessage(data.message ?? 'Something went wrong. Please try again or email us directly.');
+        setErrorMessage(data.error ?? 'Something went wrong. Please try again or email us directly.');
         setState('error');
       }
     } catch {
@@ -287,9 +284,34 @@ export function ContactFormSection({
 
                 {state === 'error' && (
                   <div role="alert" className="contact-form-error">
-                    {errorMessage}
+                    {errorMessage}{' '}
+                    <button
+                      type="button"
+                      onClick={openMailtoFallback}
+                      style={{ textDecoration: 'underline', fontWeight: 500 }}
+                    >
+                      Email us directly instead
+                    </button>
                   </div>
                 )}
+
+                {/* Honeypot — hidden from real visitors, left blank by them */}
+                <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    width: '1px',
+                    height: '1px',
+                    opacity: 0,
+                  }}
+                />
 
                 <button
                   type="submit"
@@ -300,18 +322,6 @@ export function ContactFormSection({
                   {state === 'submitting' ? 'Sending…' : 'Send Message'}
                   <ArrowRight width={24} height={10} />
                 </button>
-
-                {!accessKey && (
-                  <p
-                    style={{
-                      fontSize: '0.75rem',
-                      color: 'var(--color-gray-500)',
-                      marginTop: '0.5rem',
-                    }}
-                  >
-                    Submitting will open your email client with the message pre-filled.
-                  </p>
-                )}
               </form>
             )}
           </AnimatedElement>
