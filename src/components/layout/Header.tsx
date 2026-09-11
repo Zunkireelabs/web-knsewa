@@ -51,10 +51,10 @@ const megaMenuContent = {
       },
     ],
     featured: {
-      title: 'Kathmandu Business Tower',
-      description: 'A landmark commercial development in the heart of the capital.',
-      image: '/images/projects/project-1.jpg',
-      href: '/projects/kathmandu-business-tower',
+      title: 'Deerwalk Complex, Kathmandu',
+      description: 'A 7-storey institutional building with double basement in Sifal, Kathmandu.',
+      image: '/images/project-galleries/project-1/deerwalk-front-1.jpg',
+      href: '/projects/deerwalk-complex-kathmandu',
     },
   },
 };

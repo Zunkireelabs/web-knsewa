@@ -11,6 +11,7 @@ import { ProjectInfoBar } from '@/components/sections/projects/ProjectInfoBar';
 import { ProjectOverview } from '@/components/sections/projects/ProjectOverview';
 import { ProjectGallery } from '@/components/sections/projects/ProjectGallery';
 import { ProjectNav } from '@/components/sections/projects/ProjectNav';
+import { ServiceFAQSection } from '@/components/sections/services/ServiceFAQSection';
 import { RelatedSection } from '@/components/sections/RelatedSection';
 import { CTASection } from '@/components/sections/CTASection';
 import { JsonLd } from '@/components/ui/JsonLd';
@@ -105,6 +106,9 @@ export default async function ProjectDetailPage({
           images={project.images.gallery}
           title={project.title}
         />
+      )}
+      {project.faq && project.faq.length > 0 && (
+        <ServiceFAQSection faqs={project.faq} />
       )}
       {related.length > 0 && (
         <RelatedSection

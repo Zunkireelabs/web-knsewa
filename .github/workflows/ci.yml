@@ -24,5 +24,3 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.PROD_WEB3FORMS_ACCESS_KEY }}

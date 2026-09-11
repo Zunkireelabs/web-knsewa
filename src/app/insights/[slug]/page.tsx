@@ -9,6 +9,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import { CTASection } from '@/components/sections/CTASection';
 import { ArticleShareBar } from '@/components/sections/insights/ArticleShareBar';
+import { ServiceFAQSection } from '@/components/sections/services/ServiceFAQSection';
 import type { NewsArticle } from '@/types/content';
 
 export function generateStaticParams() {
@@ -174,38 +175,48 @@ export default async function ArticlePage({
         </div>
       </section>
 
-      {/* Article body */}
+      {/* Article body — text left, FAQ right (when available) */}
       <article className="wrapper" style={{ padding: 'clamp(3rem, 6vw, 5rem) var(--container-padding)' }}>
-        <div className="max-w-[720px] mx-auto">
-          <Link
-            href="/insights/"
-            className="inline-flex items-center gap-2 fs-16 font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-white)] hover:bg-[var(--color-accent)]"
-            style={{
-              background: 'var(--color-gray-100)',
-              padding: '0.5rem 1rem',
-              borderRadius: '999px',
-              marginBottom: 'clamp(2rem, 4vw, 3rem)',
-            }}
-          >
-            ← All Insights
-          </Link>
-
-          <div
-            style={{
-              borderLeft: '3px solid var(--color-accent)',
-              paddingLeft: 'clamp(1.25rem, 2.5vw, 1.75rem)',
-              margin: '0 0 2.5rem',
-            }}
-          >
-            <p
-              className="fs-19 text-[var(--color-primary)]"
-              style={{ opacity: 0.85, textAlign: 'left', lineHeight: 1.6, fontWeight: 400 }}
+        <div
+          className={`grid grid-cols-1 ${article.faq && article.faq.length > 0 ? 'lg:grid-cols-2' : ''} gap-x-16 gap-y-12`}
+        >
+          <div className={article.faq && article.faq.length > 0 ? '' : 'max-w-[720px]'}>
+            <Link
+              href="/insights/"
+              className="inline-flex items-center gap-2 fs-16 font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-white)] hover:bg-[var(--color-accent)]"
+              style={{
+                background: 'var(--color-gray-100)',
+                padding: '0.5rem 1rem',
+                borderRadius: '999px',
+                marginBottom: 'clamp(2rem, 4vw, 3rem)',
+              }}
             >
-              {article.excerpt}
-            </p>
+              ← All Insights
+            </Link>
+
+            <div
+              style={{
+                borderLeft: '3px solid var(--color-accent)',
+                paddingLeft: 'clamp(1.25rem, 2.5vw, 1.75rem)',
+                margin: '0 0 2.5rem',
+              }}
+            >
+              <p
+                className="fs-19 text-[var(--color-primary)]"
+                style={{ opacity: 0.85, textAlign: 'left', lineHeight: 1.6, fontWeight: 400 }}
+              >
+                {article.excerpt}
+              </p>
+            </div>
+
+            <ArticleShareBar url={`https://knsewa.com/insights/${slug}/`} title={article.title} />
           </div>
 
-          <ArticleShareBar url={`https://knsewa.com/insights/${slug}/`} title={article.title} />
+          {article.faq && article.faq.length > 0 && (
+            <div>
+              <ServiceFAQSection faqs={article.faq} variant="panel" />
+            </div>
+          )}
         </div>
       </article>
 

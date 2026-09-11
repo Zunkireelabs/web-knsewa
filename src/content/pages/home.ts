@@ -1,5 +1,12 @@
 import { HomePageContent } from '@/types/content';
-import { allProjects, projectCategories } from '@/content/projects';
+import { insightsArticles } from '@/content/pages/insights';
+import { projectsPageContent } from '@/content/pages/projects';
+
+const latestNews = [...insightsArticles]
+  .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+  .slice(0, 7);
+
+const featuredProjectCategories = projectsPageContent.categories.filter((c) => c !== 'All');
 
 export const homePageContent: HomePageContent = {
   seo: {
@@ -63,72 +70,7 @@ export const homePageContent: HomePageContent = {
     { value: '1000', label: 'Team Members', suffix: '+' },
   ],
 
-  news: [
-    {
-      id: '1',
-      title: 'Kathmandu Valley Infrastructure Development Project Breaks Ground',
-      excerpt:
-        'A major milestone as we begin construction on the largest infrastructure project in the valley, connecting key urban centers.',
-      category: 'Infrastructure',
-      image: '/images/projects/project-1.jpg',
-      publishDate: '2024-01-15',
-      slug: 'kathmandu-valley-infrastructure-project',
-    },
-    {
-      id: '2',
-      title: 'Sustainable Building Practices in Nepal',
-      excerpt: 'How we are incorporating eco-friendly materials and methods in our construction projects.',
-      category: 'Sustainability',
-      image: '/images/projects/project-2.jpg',
-      publishDate: '2024-01-10',
-      slug: 'sustainable-building-practices',
-    },
-    {
-      id: '3',
-      title: 'New Safety Protocols for Construction Sites',
-      excerpt: 'Implementing world-class safety standards across all our project sites.',
-      category: 'Safety',
-      image: '/images/projects/project-3.jpg',
-      publishDate: '2024-01-05',
-      slug: 'new-safety-protocols',
-    },
-    {
-      id: '4',
-      title: 'Community Development Through Construction',
-      excerpt: 'Building schools and healthcare facilities in rural Nepal.',
-      category: 'Community',
-      image: '/images/projects/project-1.jpg',
-      publishDate: '2023-12-28',
-      slug: 'community-development',
-    },
-    {
-      id: '5',
-      title: 'Modern Construction Technology in Nepal',
-      excerpt: 'Adopting cutting-edge technology to improve construction efficiency.',
-      category: 'Technology',
-      image: '/images/projects/project-2.jpg',
-      publishDate: '2023-12-20',
-      slug: 'modern-construction-technology',
-    },
-    {
-      id: '6',
-      title: 'Award for Excellence in Construction',
-      excerpt: 'Recognized for our commitment to quality and innovation.',
-      category: 'Awards',
-      image: '/images/projects/project-3.jpg',
-      publishDate: '2023-12-15',
-      slug: 'excellence-award',
-    },
-    {
-      id: '7',
-      title: 'Expanding Our Presence in Eastern Nepal',
-      excerpt: 'Opening new offices to better serve communities in the eastern region.',
-      category: 'Company News',
-      image: '/images/projects/project-1.jpg',
-      publishDate: '2023-12-10',
-      slug: 'eastern-nepal-expansion',
-    },
-  ],
+  news: latestNews,
 
   services: {
     headline: 'Our Expertise',
@@ -175,8 +117,8 @@ export const homePageContent: HomePageContent = {
 
   featuredProjects: {
     headline: 'Featured Projects',
-    categories: projectCategories,
-    projects: allProjects,
+    categories: featuredProjectCategories,
+    projects: projectsPageContent.projects,
   },
 
   coverage: {
@@ -265,7 +207,7 @@ export const homePageContent: HomePageContent = {
       description: 'We mold spaces that inspire, innovate, and endure.',
       bullets: ['Residential & commercial complexes', 'Institutional & government buildings', 'Earthquake-resistant structures'],
       image: '/images/services/service1.jpg',
-      href: '/services/building',
+      href: '/services/commercial',
     },
     {
       id: 'water-treatment',
@@ -274,7 +216,7 @@ export const homePageContent: HomePageContent = {
       description: 'Elevating living conditions with advanced water treatment and sanitation.',
       bullets: ['Wastewater treatment plants', 'Sewerage & drainage systems', 'Community sanitation infrastructure'],
       image: '/images/services/service2.jpg',
-      href: '/services/water-treatment',
+      href: '/services/infrastructure',
     },
     {
       id: 'road-drain',
@@ -283,7 +225,7 @@ export const homePageContent: HomePageContent = {
       description: 'Crafting roads and drains that lead societies towards advancement.',
       bullets: ['Urban & rural road construction', 'Stormwater drain networks', 'Pavement & bitumen works'],
       image: '/images/services/service3.jpg',
-      href: '/services/road-drain',
+      href: '/services/infrastructure',
     },
     {
       id: 'airport',
@@ -292,7 +234,7 @@ export const homePageContent: HomePageContent = {
       description: 'Building gateways to possibilities with airport construction.',
       bullets: ['Runway & apron construction', 'Terminal & hangar buildings', 'Taxiway & airfield works'],
       image: '/images/services/service4.jpg',
-      href: '/services/airport',
+      href: '/services/infrastructure',
     },
     {
       id: 'irrigation',
@@ -301,7 +243,7 @@ export const homePageContent: HomePageContent = {
       description: 'Engineering irrigation solutions that nurture landscapes and livelihoods.',
       bullets: ['Canal & headworks construction', 'Distribution network systems', 'Agricultural water management'],
       image: '/images/services/service5.jpg',
-      href: '/services/irrigation',
+      href: '/services/infrastructure',
     },
     {
       id: 'energy',
@@ -310,7 +252,7 @@ export const homePageContent: HomePageContent = {
       description: 'Energizing growth through cutting-edge energy solutions.',
       bullets: ['Hydropower civil works', 'Substation construction', 'Rural electrification infrastructure'],
       image: '/images/services/service6.jpg',
-      href: '/services/energy',
+      href: '/services/infrastructure',
     },
     {
       id: 'water-supply',
@@ -319,7 +261,7 @@ export const homePageContent: HomePageContent = {
       description: 'Ensuring communities thrive with efficient water supply networks.',
       bullets: ['Distribution pipelines', 'Overhead reservoir construction', 'Intake & pump stations'],
       image: '/images/services/service-center.jpg',
-      href: '/services/water-supply',
+      href: '/services/infrastructure',
     },
     {
       id: 'bridge-culvert',
@@ -328,7 +270,7 @@ export const homePageContent: HomePageContent = {
       description: 'Connecting hearts and places through bridges and culverts.',
       bullets: ['RCC & steel bridges', 'Suspension footbridges', 'Box culverts & river crossings'],
       image: '/images/services/infrastructure.jpg',
-      href: '/services/bridge-culvert',
+      href: '/services/infrastructure',
     },
   ],
 

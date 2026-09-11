@@ -24,8 +24,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.PROD_WEB3FORMS_ACCESS_KEY }}
 
   deploy:
     name: Deploy to Production
@@ -50,11 +48,6 @@ jobs:
             git fetch origin
             git checkout main
             git reset --hard origin/main
-
-            # Write build-time secrets to .env (overwritten each deploy)
-            cat > .env << 'ENVEOF'
-            NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=${{ secrets.PROD_WEB3FORMS_ACCESS_KEY }}
-            ENVEOF
 
             docker compose -f docker-compose.yml up -d --build
 

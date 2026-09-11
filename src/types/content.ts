@@ -149,6 +149,7 @@ export interface NewsArticle {
   image: string;
   publishDate: string;
   slug: string;
+  faq?: FAQItem[];
 }
 
 // CTA Section

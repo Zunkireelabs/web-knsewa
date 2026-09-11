@@ -38,10 +38,6 @@ jobs:
             git fetch origin
             git checkout ${{ inputs.commit_sha }}
 
-            cat > .env << 'ENVEOF'
-            NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=${{ secrets.PROD_WEB3FORMS_ACCESS_KEY }}
-            ENVEOF
-
             docker compose -f docker-compose.yml up -d --build
 
             echo "Waiting for container to be healthy..."
