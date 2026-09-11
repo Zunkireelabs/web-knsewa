@@ -80,7 +80,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'We mold spaces that inspire, innovate, and endure.',
       bullets: ['Residential & commercial complexes', 'Institutional & government buildings', 'Earthquake-resistant structures'],
       image: '/images/services/service1.jpg',
-      href: '/services/building',
+      href: '/services/commercial',
     },
     {
       id: 'water-treatment',
@@ -89,7 +89,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Elevating living conditions with advanced water treatment and sanitation systems.',
       bullets: ['Wastewater treatment plants', 'Sewerage & drainage systems', 'Community sanitation infrastructure'],
       image: '/images/services/service2.jpg',
-      href: '/services/water-treatment',
+      href: '/services/infrastructure',
     },
     {
       id: 'road-drain',
@@ -98,7 +98,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Crafting roads and drains that lead societies towards advancement.',
       bullets: ['Urban & rural road construction', 'Stormwater drain networks', 'Pavement & bitumen works'],
       image: '/images/services/service3.jpg',
-      href: '/services/road-drain',
+      href: '/services/infrastructure',
     },
     {
       id: 'airport',
@@ -107,7 +107,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Building gateways to possibilities with world-class airport construction.',
       bullets: ['Runway & apron construction', 'Terminal & hangar buildings', 'Taxiway & airfield works'],
       image: '/images/services/service4.jpg',
-      href: '/services/airport',
+      href: '/services/infrastructure',
     },
     {
       id: 'irrigation',
@@ -116,7 +116,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Engineering irrigation solutions that nurture landscapes and livelihoods.',
       bullets: ['Canal & headworks construction', 'Distribution network systems', 'Agricultural water management'],
       image: '/images/services/service5.jpg',
-      href: '/services/irrigation',
+      href: '/services/infrastructure',
     },
     {
       id: 'energy',
@@ -125,7 +125,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Energizing growth through cutting-edge energy infrastructure solutions.',
       bullets: ['Hydropower civil works', 'Substation construction', 'Rural electrification infrastructure'],
       image: '/images/services/service6.jpg',
-      href: '/services/energy',
+      href: '/services/infrastructure',
     },
     {
       id: 'water-supply',
@@ -134,7 +134,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Ensuring communities thrive with efficient water supply networks.',
       bullets: ['Distribution pipelines', 'Overhead reservoir construction', 'Intake & pump stations'],
       image: '/images/services/service-center.jpg',
-      href: '/services/water-supply',
+      href: '/services/infrastructure',
     },
     {
       id: 'bridge-culvert',
@@ -143,7 +143,7 @@ export const servicesPageContent: ServicesPageContent = {
       description: 'Connecting hearts and places through engineered bridges and culverts.',
       bullets: ['RCC & steel bridges', 'Suspension footbridges', 'Box culverts & river crossings'],
       image: '/images/services/infrastructure.jpg',
-      href: '/services/bridge-culvert',
+      href: '/services/infrastructure',
     },
   ],
 
@@ -251,11 +251,11 @@ export const servicesPageContent: ServicesPageContent = {
       'From initial consultation to final handover, our team is ready to bring your vision to life with precision, quality, and commitment.',
     primaryCTA: {
       text: 'Request Site Visit',
-      href: '/request-site-visit',
+      href: '/contact',
     },
     secondaryCTA: {
       text: 'Request Quote',
-      href: '/request-quote',
+      href: '/contact',
     },
   },
 };
