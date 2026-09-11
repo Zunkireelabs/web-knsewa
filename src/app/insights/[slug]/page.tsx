@@ -176,7 +176,14 @@ export default async function ArticlePage({
       </section>
 
       {/* Article body */}
-      <article className="wrapper" style={{ padding: 'clamp(3rem, 6vw, 5rem) var(--container-padding)' }}>
+      <article
+        className="wrapper"
+        style={{
+          padding: `clamp(3rem, 6vw, 5rem) var(--container-padding) ${
+            article.faq && article.faq.length > 0 ? '0' : 'clamp(3rem, 6vw, 5rem)'
+          }`,
+        }}
+      >
         <div className="max-w-[720px] mx-auto">
           <Link
             href="/insights/"
