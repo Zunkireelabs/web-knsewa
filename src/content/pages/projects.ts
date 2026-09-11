@@ -176,6 +176,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'HVAC & lift systems',
         'Guard house & mortuary',
       ],
+      faq: [
+        { question: 'What is the Pathari Sanischare Municipal Hospital project?', answer: 'KNSEWA constructed a 15-bed municipal hospital in Pathari, Morang for Pathari Sanischare Municipality. The 2-storey RCC building includes ramp access, HVAC and lift systems, a guard house, and a mortuary.' },
+        { question: 'Who was the client for this hospital project?', answer: 'The project was commissioned by Pathari Sanischare Municipality, Morang, to expand healthcare access for the local community.' },
+        { question: 'What is the current status of the hospital?', answer: 'The 15-bed Pathari Sanischare Municipal Hospital was completed in 2021 and is now operational, serving the Pathari area.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-4/p-4-small.jpg',
         featured: '/images/project-galleries/project-4/1.jpg',
@@ -207,6 +212,11 @@ export const projectsPageContent: ProjectsPageContent = {
         '32 RCC piles (800mm)',
         'River training works',
         'Approach road construction',
+      ],
+      faq: [
+        { question: 'What is the Pathari Khola Bridge project?', answer: 'KNSEWA constructed a 40-metre prestressed concrete bridge over the Pathari Khola on Buddha Marga in Ward No. 6, Pathari, Morang, for Pathari Sanischare Municipality.' },
+        { question: 'What engineering work did this bridge involve?', answer: 'The project included 32 RCC piles (800mm), river training works to protect the riverbanks, and approach road construction connecting the bridge to the local road network.' },
+        { question: 'Who commissioned the Pathari Khola Bridge?', answer: 'The bridge was commissioned by Pathari Sanischare Municipality, Morang, and was completed in 2022.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-5/p5-small.jpg',
@@ -278,6 +288,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Guard house & canteen',
         '250m boundary wall',
         'Generator & parking sheds',
+      ],
+      faq: [
+        { question: 'What is the Administration Building at Jahada-5 project?', answer: 'KNSEWA constructed a full administration complex for Jahada Rural Municipality in Jahada-5, Majhare, Morang, including a guard house, canteen, and supporting facilities.' },
+        { question: 'What facilities are included in this administration building?', answer: 'The project includes a 250-metre boundary wall, generator and parking sheds, a guard house, and a canteen alongside the main administrative building.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Jahada Rural Municipality, Morang, and the project was completed in 2022.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-7/p-7-small.jpg',
@@ -388,6 +403,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Special Economic Zone',
         'Full MEP systems',
       ],
+      faq: [
+        { question: 'What is the Administrative Building at Panchkhal SEZ project?', answer: 'KNSEWA constructed a 5,256 sqm administrative building for the Special Economic Zone Authority at Panchkhal, Kavrepalanchowk, complete with full mechanical, electrical, and plumbing (MEP) systems.' },
+        { question: 'Who commissioned this building?', answer: 'The project was commissioned by the Special Economic Zone Authority, Kathmandu, as part of the Panchkhal Special Economic Zone development.' },
+        { question: 'When was this project completed?', answer: 'The Panchkhal SEZ administrative building was completed in 2021.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-10/p-10-small.jpg',
         featured: '/images/project-galleries/project-10/P3.jpg',
@@ -423,6 +443,11 @@ export const projectsPageContent: ProjectsPageContent = {
         '5 deep tube wells',
         'Complete pumping system',
       ],
+      faq: [
+        { question: 'What is the Mangadh Sahalagani Water Supply and Sanitation project?', answer: 'KNSEWA built a complete water supply and sanitation system in Biratnagar, Morang, including a 255 cum overhead tank, 3 water treatment plants, and 5 deep tube wells.' },
+        { question: 'What does this project deliver to the community?', answer: 'The project delivers treated drinking water to the Mangadh Sahalagani area through a complete pumping system connected to the overhead tank and treatment plants.' },
+        { question: 'Who commissioned this water supply project?', answer: 'The project was commissioned by the Water Supply & Sanitation Division Office, Biratnagar, and was completed in 2018.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-12/p-12-small.jpg',
         featured: '/images/project-galleries/project-12/1.jpg',
@@ -457,6 +482,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Cross drainage works',
         'Bio-engineering',
       ],
+      faq: [
+        { question: 'What is the Kiratichowk Birendranagar Road project?', answer: 'KNSEWA constructed an 8.75 km asphalt road connecting Kiratichowk and Birendranagar within Pathari Sanischare Municipality, Morang, complete with RCC drains on both sides.' },
+        { question: 'What additional works were included in this road project?', answer: 'The project included cross drainage works and bio-engineering measures to stabilize the roadside embankments alongside the main asphalt road construction.' },
+        { question: 'Who commissioned this road?', answer: 'The road was commissioned by the Infrastructure Development Office, Biratnagar, and completed in 2022.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-13/p-13-small.jpg',
         featured: '/images/project-galleries/project-13/1.jpg',
@@ -490,6 +520,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'RCC cover slab',
         '2 syphons',
       ],
+      faq: [
+        { question: 'What is the Stormwater Concrete Drain project?', answer: 'KNSEWA constructed a 1,745-metre long RCC stormwater drain in Biratnagar, Morang, for Biratnagar Metropolitan City, complete with an RCC cover slab.' },
+        { question: 'What special structures were included in this drainage project?', answer: 'The project included 2 syphons to manage stormwater flow across intersecting waterways along the drain\'s route.' },
+        { question: 'Who commissioned this drainage project?', answer: 'The project was commissioned by Biratnagar Metropolitan City and was completed in 2022.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-14/p-14-small.jpg',
         featured: '/images/project-galleries/project-14/2.jpg',
@@ -522,6 +557,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Printing plant & godown',
         '1,521 sqm total floor area',
       ],
+      faq: [
+        { question: 'What is the Gorkha Patra Sansthan Building project?', answer: 'KNSEWA constructed the Gorkha Patra Sansthan building in Biratnagar, Morang, comprising a 3.5-storey office building and a 2.5-storey staff quarter building, totalling 1,521 sqm of floor area.' },
+        { question: 'What facilities does this building include?', answer: 'The project includes a printing plant and godown alongside the office and staff quarter buildings, supporting Gorkha Patra Sansthan\'s publishing operations.' },
+        { question: 'Who commissioned this project?', answer: 'The project was commissioned by the Federal Project Implementation Unit, Morang, and was completed in 2019.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-16/p-16-small.jpg',
         featured: '/images/project-galleries/project-16/p-16-small.jpg',
@@ -553,6 +593,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Wooden parketing',
         'Residential school facility',
       ],
+      faq: [
+        { question: 'What is the Aarohan Gurukul Theater Complex project?', answer: 'KNSEWA constructed a theater complex combined with a residential school for Aarohan Gurukul in Biratnagar, Morang, for Biratnagar Metropolitan City.' },
+        { question: 'What facilities does the theater complex include?', answer: 'The complex features a 400-seat theater hall with audio-visual installation and wooden parquet flooring, alongside residential school facilities.' },
+        { question: 'When was this project completed?', answer: 'The Aarohan Gurukul Theater Complex was completed in 2021.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-17/p-17-small.jpg',
         featured: '/images/project-galleries/project-17/3.jpg',
@@ -579,6 +624,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2017',
       highlights: ['2-storey RCC structure', 'Educational facility'],
+      faq: [
+        { question: 'What is the Department of Civil Engineering Building project?', answer: 'KNSEWA constructed a 2-storey RCC building for the Department of Civil Engineering at Manmohan Memorial Polytechnic in Hattimuda-7, Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Manmohan Memorial Polytechnic, Morang, an educational institution offering technical and engineering programs.' },
+        { question: 'When was this building completed?', answer: 'The Department of Civil Engineering Building was completed in 2017.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-19/p-19-small.jpg',
         featured: '/images/project-galleries/project-19/1.jpg',
@@ -611,6 +661,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Mat foundation (610mm)',
         'Full MEP systems',
       ],
+      faq: [
+        { question: 'What is the Paramedical Building project at Budhiganga-4?', answer: 'KNSEWA constructed a 2.5-storey, 3,034 sqm paramedical building for Manmohan Technical University in Budhiganga-4, Morang, built on a 610mm mat foundation.' },
+        { question: 'What systems were installed in this building?', answer: 'The building includes full mechanical, electrical, and plumbing (MEP) systems to support its use as a paramedical education facility.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Manmohan Technical University, Morang, and the project was completed in 2022.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-20/p-20-small.jpg',
         featured: '/images/project-galleries/project-20/1.jpg',
@@ -638,6 +693,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2011',
       highlights: ['2-storey government office', 'RCC frame structure'],
+      faq: [
+        { question: 'What is the District Treasury Controller Office Building project?', answer: 'KNSEWA constructed a 2-storey RCC-frame government office building for the District Treasury Controller Office in Biratnagar, Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the District Treasury Controller Office, Morang, a government body responsible for district-level treasury administration.' },
+        { question: 'When was this building completed?', answer: 'The District Treasury Controller Office Building was completed in 2011.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-21/p-21-small.jpg',
         featured: '/images/project-galleries/project-21/1.jpg',
@@ -665,6 +725,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2018',
       highlights: ['2-storey office building', '7,603 sq.ft floor area'],
+      faq: [
+        { question: 'What is the Karmachari Sanchaya Kosh Office Building project?', answer: 'KNSEWA constructed a 2-storey, 7,603 sq.ft office building for Karmachari Sanchaya Kosh (the Employees Provident Fund) in Biratnagar, Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Karmachari Sanchaya Kosh, Morang, Nepal\'s Employees Provident Fund.' },
+        { question: 'When was this office building completed?', answer: 'The building was completed in 2018.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-22/p-22-small.jpg',
         featured: '/images/project-galleries/project-22/1.jpg',
@@ -692,6 +757,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2014',
       highlights: ['3-storey government building', '13,453 sq.ft floor area'],
+      faq: [
+        { question: 'What is the District Administration Office project in Biratnagar?', answer: 'KNSEWA constructed a 3-storey, 13,453 sq.ft government office building for the District Administration Office in Biratnagar, Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the District Administration Office, Biratnagar, the district\'s principal government administrative body.' },
+        { question: 'When was this building completed?', answer: 'The District Administration Office building was completed in 2014.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-23/p-7-2.jpg',
         featured: '/images/project-galleries/project-23/1.jpg',
@@ -718,6 +788,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2012',
       highlights: ['3-storey office building', '6,000 sq.ft floor area'],
+      faq: [
+        { question: 'What is the Urban Development & Building Construction Office project?', answer: 'KNSEWA constructed a 3-storey, 6,000 sq.ft office building for the Department of Urban Development & Building Construction in Biratnagar, Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the Department of Urban Development & Building Construction, Biratnagar.' },
+        { question: 'When was this office building completed?', answer: 'The building was completed in 2012.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-25/p-25-small.jpg',
         featured: '/images/project-galleries/project-25/p-25-small.jpg',
@@ -743,6 +818,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2022',
       highlights: ['3-storey academic block', 'University campus facility'],
+      faq: [
+        { question: 'What is the JAMC Academic Block project?', answer: 'KNSEWA constructed a 3-storey academic block for Janta Aadarsha Multiple Campus (JAMC) in Biratnagar, Morang, under Purbanchal University.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Purbanchal University, Biratnagar, for its affiliated Janta Aadarsha Multiple Campus.' },
+        { question: 'When was this academic block completed?', answer: 'The JAMC academic block was completed in 2022.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-26/p-26-small.jpg',
         featured: '/images/project-galleries/project-26/1.jpg',
@@ -772,6 +852,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'NEA 400kV substation project',
         'Staff quarters & guard house',
         '549 sqm floor area',
+      ],
+      faq: [
+        { question: 'What is the Staff Quarter at Inaruwa Substation project?', answer: 'KNSEWA constructed a 549 sqm staff quarter and guard house at the Inaruwa Substation in Sunsari, as part of Nepal Electricity Authority\'s Hetauda-Dhalkebar-Inaruwa 400kV transmission project.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Nepal Electricity Authority (NEA), under its Hetauda-Dhalkebar-Inaruwa 400kV transmission line project.' },
+        { question: 'When was this staff quarter completed?', answer: 'The staff quarter and guard house were completed in 2022.' },
       ],
       images: {
         thumbnail: '/images/project-galleries/project-27/p-27-small.jpg',
@@ -806,6 +891,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Submersible pump installation',
         'Complete electrical works',
       ],
+      faq: [
+        { question: 'What is the 450 Cum RCC Overhead Tank project?', answer: 'KNSEWA constructed a 450 cum capacity RCC overhead water tank at Pichra, Biratnagar, Morang, for the Federal Water Supply & Sewerage Management Project.' },
+        { question: 'What mechanical and electrical work was included?', answer: 'The project included submersible pump installation and complete electrical works to operate the water distribution system.' },
+        { question: 'When was this tank completed?', answer: 'The overhead tank was completed in 2014.' },
+      ],
       images: {
         thumbnail: '/images/project-galleries/project-31/p-31-small.jpg',
         featured: '/images/project-galleries/project-31/p-31-small.jpg',
@@ -834,6 +924,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2009',
       highlights: ['RCC Bridge', 'Simariya Road', 'Sunsari-Morang Bridge Project'],
+      faq: [
+        { question: 'What is the RCC Bridge Construction project on Simariya Road?', answer: 'KNSEWA constructed an RCC bridge on Simariya Road in Morang, under the Sunsari-Morang Bridge Construction Project.' },
+        { question: 'Who commissioned this bridge?', answer: 'The bridge was commissioned by the Sunsari-Morang Bridge Construction Project, Sunsari.' },
+        { question: 'When was this bridge completed?', answer: 'The Simariya Road bridge was completed in 2009.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -857,6 +952,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2009',
       highlights: ['450m³ Capacity', 'RCC Construction', 'Water Supply'],
+      faq: [
+        { question: 'What is the RCC Overhead Water Tank project in Mangsuwa?', answer: 'KNSEWA constructed a 450m³ capacity RCC overhead water tank in Mangsuwa, Morang, for the Water Supply & Sanitation Division Office, Morang.' },
+        { question: 'What does this tank provide to the community?', answer: 'The tank provides water storage and supply infrastructure to support the local drinking water network in Mangsuwa.' },
+        { question: 'When was this tank completed?', answer: 'The Mangsuwa overhead tank was completed in 2009.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -880,6 +980,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2006',
       highlights: ['3-Storey Building', 'Dormitory Facility', 'International Organization'],
+      faq: [
+        { question: 'What is the Lutheran World Federation Dormitory Building project?', answer: 'KNSEWA constructed a 3-storey dormitory building in Kathmandu for the Lutheran World Federation, an international humanitarian organization.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the Lutheran World Federation, Kathmandu.' },
+        { question: 'When was this dormitory building completed?', answer: 'The dormitory building was completed in 2006.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -903,6 +1008,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2008',
       highlights: ['Warehouse Facility', 'Government Storage', 'Election Office'],
+      faq: [
+        { question: 'What is the Warehouse Construction project for the District Election Office?', answer: 'KNSEWA constructed a warehouse facility for the District Election Office, Morang, to provide secure government storage.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the District Election Office, Morang.' },
+        { question: 'When was this warehouse completed?', answer: 'The warehouse was completed in 2008.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -926,6 +1036,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2010',
       highlights: ['Compound Wall', 'Slab Culvert', 'International Development Project'],
+      faq: [
+        { question: 'What is the ARD/USAID compound wall and buildings project?', answer: 'KNSEWA constructed a compound wall, buildings, a slab culvert, and a garage in Morang for ARD/USAID/NGCPP-Nepal, an international development program.' },
+        { question: 'Who was the client for this project?', answer: 'The client was ARD/USAID/NGCPP-Nepal.' },
+        { question: 'When was this project completed?', answer: 'The project was completed in 2010.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -949,6 +1064,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2011',
       highlights: ['Warehouse', 'Compound Wall', 'Government Infrastructure'],
+      faq: [
+        { question: 'What is the Warehouse & Infrastructures project for the District Admin Office, Sunsari?', answer: 'KNSEWA constructed a warehouse, compound wall, and supporting infrastructure for the District Administration Office in Sunsari.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the District Administration Office, Sunsari.' },
+        { question: 'When was this project completed?', answer: 'The project was completed in 2011.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -972,6 +1092,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2009',
       highlights: ['Child Welfare Facility', 'Government Institution', 'Social Infrastructure'],
+      faq: [
+        { question: 'What is the Child Correction Home project?', answer: 'KNSEWA constructed a Child Correction Home in Morang for Mahila Bal-bikas & Samaj Kalyan (Women, Children Development & Social Welfare), Morang, a government social welfare institution.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Mahila Bal-bikas & Samaj Kalyan, Morang.' },
+        { question: 'When was this facility completed?', answer: 'The Child Correction Home was completed in 2009.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -995,6 +1120,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2010',
       highlights: ['Road Sub-Project', 'RRRSDP', 'Rural Road Network'],
+      faq: [
+        { question: 'What is the Pakali-Mahendra Nagar-Chatra Road Sub-Project?', answer: 'KNSEWA constructed a rural road connecting Pakali, Mahendra Nagar, and Chatra in Sunsari, under the Rural Reconstruction and Rehabilitation Sector Development Program (RRRSDP).' },
+        { question: 'Who commissioned this road project?', answer: 'The project was commissioned by the District Project Office (DPO), Sunsari, under RRRSDP.' },
+        { question: 'When was this road completed?', answer: 'The road sub-project was completed in 2010.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1018,6 +1148,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2012',
       highlights: ['Ministry Office', 'Co-operative Department', 'Government Building'],
+      faq: [
+        { question: 'What is the Ministry of Agriculture & Co-operative Office Building project?', answer: 'KNSEWA constructed a government office building in Morang for the Ministry of Agriculture & Co-operative\'s Division Co-operative Office (DCO).' },
+        { question: 'Who was the client for this project?', answer: 'The client was the Ministry of Agriculture & Co-operative, Department of Co-operative, Division Co-operative Office, Morang.' },
+        { question: 'When was this office building completed?', answer: 'The building was completed in 2012.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1041,6 +1176,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2012',
       highlights: ['Urban Corridor', 'DUDBC Project', 'Multi-city Infrastructure'],
+      faq: [
+        { question: 'What is the Innaruwa-Duhabi-Ithari-Dharan Corridor project?', answer: 'KNSEWA delivered infrastructure development works along the Innaruwa-Duhabi-Ithari-Dharan urban corridor in Morang, for the Department of Urban Development and Building Construction (DUDBC).' },
+        { question: 'Who commissioned this corridor project?', answer: 'The project was commissioned by DUDBC\'s Division Office, Morang.' },
+        { question: 'When was this project completed?', answer: 'The corridor infrastructure project was completed in 2012.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1064,6 +1204,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2013',
       highlights: ['Telecom Exchange', 'Nepal Telecom', 'Eastern Regional Directorate'],
+      faq: [
+        { question: 'What is the Nepal Telecom Exchange Building project?', answer: 'KNSEWA constructed a telecom exchange building at Roadsesh, Biratnagar, Morang, for Nepal Telecom\'s Eastern Regional Directorate.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Nepal Telecom, Eastern Regional Directorate, Biratnagar.' },
+        { question: 'When was this exchange building completed?', answer: 'The building was completed in 2013.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1087,6 +1232,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2013',
       highlights: ['Canal Construction', 'Irrigation Structures', 'Eastern Region'],
+      faq: [
+        { question: 'What is the Canal and Structures project for Eastern Irrigation Development?', answer: 'KNSEWA constructed irrigation canals and structures in Sunsari for the Eastern Irrigation Development Division No. 2.' },
+        { question: 'Who commissioned this irrigation project?', answer: 'The project was commissioned by the Eastern Irrigation Development Division No. 2, Sunsari.' },
+        { question: 'When was this project completed?', answer: 'The canal and structures project was completed in 2013.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1110,6 +1260,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2014',
       highlights: ['Desilting Works', 'Chatra Main Canal', 'Sunsari-Morang Irrigation'],
+      faq: [
+        { question: 'What is the Desilting Works of CMC, Chatra Main Canal project?', answer: 'KNSEWA carried out desilting works on the Chatra Main Canal (CMC) in Biratnagar, for the Sunsari-Morang Irrigation Project.' },
+        { question: 'Why is canal desilting important?', answer: 'Desilting removes accumulated sediment from the Chatra Main Canal, maintaining its water flow capacity for irrigation across the Sunsari-Morang region.' },
+        { question: 'Who commissioned this maintenance project?', answer: 'The project was commissioned by the Sunsari-Morang Irrigation Project, Biratnagar, and completed in 2014.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1133,6 +1288,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2014',
       highlights: ['Industry Office', 'Government Building', 'Biratnagar'],
+      faq: [
+        { question: 'What is the Cottage & Small Industry Office Building project?', answer: 'KNSEWA constructed a government office building for the Cottage & Small Industry Office in Biratnagar, Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the Cottage & Small Industry Office, Biratnagar, Morang.' },
+        { question: 'When was this office building completed?', answer: 'The building was completed in 2014.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1156,6 +1316,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2014',
       highlights: ['RCC Girder Bridge', 'Kocheni Khola', 'District Development'],
+      faq: [
+        { question: 'What is the Kocheni Khola RCC Girder Bridge project?', answer: 'KNSEWA constructed an RCC girder bridge over the Kocheni Khola in Biratnagar, Morang, for the District Development Committee.' },
+        { question: 'Who commissioned this bridge?', answer: 'The bridge was commissioned by the District Development Committee, Biratnagar, Morang.' },
+        { question: 'When was this bridge completed?', answer: 'The Kocheni Khola bridge was completed in 2014.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1179,6 +1344,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2015',
       highlights: ['225 CUm Capacity', 'Overhead Tank', 'Water Storage'],
+      faq: [
+        { question: 'What is the 225 CUm RCC Overhead Water Storage Tank project?', answer: 'KNSEWA constructed a 225 cubic-metre capacity RCC overhead water storage tank in Morang for the Water Supply & Sanitation Division Office.' },
+        { question: 'Who commissioned this water tank?', answer: 'The project was commissioned by the Water Supply & Sanitation Division Office, Morang.' },
+        { question: 'When was this tank completed?', answer: 'The overhead tank was completed in 2015.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1202,6 +1372,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2015',
       highlights: ['Helipad Construction', 'Biratnagar Airport', 'Civil Aviation'],
+      faq: [
+        { question: 'What is the Helipad at Biratnagar Airport project?', answer: 'KNSEWA constructed a helipad at Biratnagar Airport for the Civil Aviation Authority of Nepal (CAAN).' },
+        { question: 'Who commissioned this aviation infrastructure?', answer: 'The project was commissioned by the Civil Aviation Authority of Nepal, Babarmahal, Kathmandu.' },
+        { question: 'When was this helipad completed?', answer: 'The helipad was completed in 2015.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1225,6 +1400,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2015',
       highlights: ['Blacktopped Road', 'Drainage Structures', 'Multi-location'],
+      faq: [
+        { question: 'What is the Blacktopped Road Construction project in Jhapa-Morang?', answer: 'KNSEWA carried out blacktopped road construction works across multiple locations in the Jhapa-Morang area, including associated drainage structures, for the Division Road Office, Morang.' },
+        { question: 'Who commissioned this road project?', answer: 'The project was commissioned by the Division Road Office, Morang.' },
+        { question: 'When was this project completed?', answer: 'The blacktopped road works were completed in 2015.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1248,6 +1428,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2018',
       highlights: ['Overhead Water Tank', 'Deep Tube Well', 'Special Economic Zone'],
+      faq: [
+        { question: 'What is the Overhead Water Tank and Deep Tube Well project at Simara SEZ?', answer: 'KNSEWA constructed an overhead water tank and deep tube well at the Simara Special Economic Zone (SEZ) in Bara, for the Special Economic Zone Development Committee.' },
+        { question: 'Who commissioned this water infrastructure?', answer: 'The project was commissioned by the Special Economic Zone Development Committee, Babarmahal, Kathmandu.' },
+        { question: 'When was this project completed?', answer: 'The water tank and tube well were completed in 2018.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1271,6 +1456,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2019',
       highlights: ['Warehouse', 'Boundary Wall', 'Nepal Red Cross Society'],
+      faq: [
+        { question: 'What is the Nepal Red Cross Society Warehouse project?', answer: 'KNSEWA constructed a warehouse and boundary wall in Itahari, Sunsari, for the Nepal Red Cross Society.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the Nepal Red Cross Society, headquartered in Kalimati, Kathmandu.' },
+        { question: 'When was this warehouse completed?', answer: 'The warehouse and boundary wall were completed in 2019.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1294,6 +1484,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2019',
       highlights: ['NEA Transmission Project', 'Nepal-India Electricity', 'Staff Quarter & Store'],
+      faq: [
+        { question: 'What is the Staff Quarter, Store & Guard House project for NEA?', answer: 'KNSEWA constructed a staff quarter, store, and guard house in Inaruwa, Sunsari, for Nepal Electricity Authority\'s Nepal-India Electricity Transmission & Trade Project.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Nepal Electricity Authority (NEA), Transmission Directorate.' },
+        { question: 'When was this project completed?', answer: 'The staff quarter, store, and guard house were completed in 2019.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1317,6 +1512,11 @@ export const projectsPageContent: ProjectsPageContent = {
       status: 'completed',
       year: '2011',
       highlights: ['Office Building', 'Government Infrastructure', 'District Administration'],
+      faq: [
+        { question: 'What is the Office Building & Infrastructures project for the District Admin Office, Morang?', answer: 'KNSEWA constructed an office building and supporting infrastructure for the District Administration Office in Morang.' },
+        { question: 'Who was the client for this project?', answer: 'The client was the District Administration Office, Morang.' },
+        { question: 'When was this project completed?', answer: 'The project was completed in 2011.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1346,6 +1546,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Federal project',
         'Buddhashanti Municipality',
       ],
+      faq: [
+        { question: 'What is the Timai Shantinagar Integrated Water Supply Project?', answer: 'KNSEWA is delivering an integrated water supply system for Buddhashanti Municipality in Jhapa, covering wards 4, 5, 6, and 7, for the Federal Water Supply & Sewerage Management Project, Biratnagar.' },
+        { question: 'What is the contract value of this project?', answer: 'The contract value is NPR 114.9 million.' },
+        { question: 'Who commissioned this project?', answer: 'The project was commissioned by the Federal Water Supply & Sewerage Management Project, Biratnagar, in 2024.' },
+      ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
         featured: '/images/projects/placeholder.jpg',
@@ -1374,6 +1579,11 @@ export const projectsPageContent: ProjectsPageContent = {
         'Purbanchal University campus',
         'Healthcare infrastructure',
         'Ground floor construction',
+      ],
+      faq: [
+        { question: 'What is the MCH Block project at Purbanchal University?', answer: 'KNSEWA is constructing the ground floor of the Maternal and Child Health (MCH) Block at Purbanchal University\'s campus in Sundarharaincha, Gothgaun, Morang.' },
+        { question: 'What is the contract value of this project?', answer: 'The contract value is NPR 120.5 million.' },
+        { question: 'Who was the client for this project?', answer: 'The client was Purbanchal University, Central Office.' },
       ],
       images: {
         thumbnail: '/images/projects/placeholder.jpg',
