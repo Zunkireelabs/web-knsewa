@@ -1,5 +1,12 @@
 import { HomePageContent } from '@/types/content';
-import { allProjects, projectCategories } from '@/content/projects';
+import { insightsArticles } from '@/content/pages/insights';
+import { projectsPageContent } from '@/content/pages/projects';
+
+const latestNews = [...insightsArticles]
+  .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+  .slice(0, 7);
+
+const featuredProjectCategories = projectsPageContent.categories.filter((c) => c !== 'All');
 
 export const homePageContent: HomePageContent = {
   seo: {
@@ -63,72 +70,7 @@ export const homePageContent: HomePageContent = {
     { value: '1000', label: 'Team Members', suffix: '+' },
   ],
 
-  news: [
-    {
-      id: '1',
-      title: 'Kathmandu Valley Infrastructure Development Project Breaks Ground',
-      excerpt:
-        'A major milestone as we begin construction on the largest infrastructure project in the valley, connecting key urban centers.',
-      category: 'Infrastructure',
-      image: '/images/projects/project-1.jpg',
-      publishDate: '2024-01-15',
-      slug: 'kathmandu-valley-infrastructure-project',
-    },
-    {
-      id: '2',
-      title: 'Sustainable Building Practices in Nepal',
-      excerpt: 'How we are incorporating eco-friendly materials and methods in our construction projects.',
-      category: 'Sustainability',
-      image: '/images/projects/project-2.jpg',
-      publishDate: '2024-01-10',
-      slug: 'sustainable-building-practices',
-    },
-    {
-      id: '3',
-      title: 'New Safety Protocols for Construction Sites',
-      excerpt: 'Implementing world-class safety standards across all our project sites.',
-      category: 'Safety',
-      image: '/images/projects/project-3.jpg',
-      publishDate: '2024-01-05',
-      slug: 'new-safety-protocols',
-    },
-    {
-      id: '4',
-      title: 'Community Development Through Construction',
-      excerpt: 'Building schools and healthcare facilities in rural Nepal.',
-      category: 'Community',
-      image: '/images/projects/project-1.jpg',
-      publishDate: '2023-12-28',
-      slug: 'community-development',
-    },
-    {
-      id: '5',
-      title: 'Modern Construction Technology in Nepal',
-      excerpt: 'Adopting cutting-edge technology to improve construction efficiency.',
-      category: 'Technology',
-      image: '/images/projects/project-2.jpg',
-      publishDate: '2023-12-20',
-      slug: 'modern-construction-technology',
-    },
-    {
-      id: '6',
-      title: 'Award for Excellence in Construction',
-      excerpt: 'Recognized for our commitment to quality and innovation.',
-      category: 'Awards',
-      image: '/images/projects/project-3.jpg',
-      publishDate: '2023-12-15',
-      slug: 'excellence-award',
-    },
-    {
-      id: '7',
-      title: 'Expanding Our Presence in Eastern Nepal',
-      excerpt: 'Opening new offices to better serve communities in the eastern region.',
-      category: 'Company News',
-      image: '/images/projects/project-1.jpg',
-      publishDate: '2023-12-10',
-      slug: 'eastern-nepal-expansion',
-    },
-  ],
+  news: latestNews,
 
   services: {
     headline: 'Our Expertise',
@@ -175,8 +117,8 @@ export const homePageContent: HomePageContent = {
 
   featuredProjects: {
     headline: 'Featured Projects',
-    categories: projectCategories,
-    projects: allProjects,
+    categories: featuredProjectCategories,
+    projects: projectsPageContent.projects,
   },
 
   coverage: {
