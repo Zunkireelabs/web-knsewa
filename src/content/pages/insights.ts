@@ -10,6 +10,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/patan-token-distribution.jpg',
     publishDate: '2024-01-15',
     slug: 'honored-by-former-pm-kp-sharma-oli',
+    faq: [
+      { question: 'What honor did Khushbu Nirman Sewa receive from Former PM KP Sharma Oli?', answer: 'Khushbu Nirman Sewa received a Letter of Appreciation and Token of Love from Former Prime Minister KP Sharma Oli, recognizing the successful completion of the Patan Secondary School project.' },
+      { question: 'What project prompted this recognition?', answer: 'The honor was given for KNSEWA\'s successful completion of the Patan Secondary School project, a significant institutional construction project.' },
+      { question: 'When was this honor received?', answer: 'The recognition was announced on January 15, 2024.' },
+    ],
   },
   {
     id: 'award-patan-school',
@@ -20,6 +25,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/award-patan-school-1.jpg',
     publishDate: '2024-01-10',
     slug: 'appreciation-patan-secondary-school-jica',
+    faq: [
+      { question: 'What recognition did KNSEWA receive from Patan Secondary School and JICA?', answer: 'KNSEWA received a Letter of Appreciation for outstanding construction quality and timely delivery of the Patan Secondary School project, which was funded by JICA (Japan International Cooperation Agency).' },
+      { question: 'Why was this project significant?', answer: 'The recognition reflects the quality and timeliness of KNSEWA\'s work on an internationally-funded educational infrastructure project.' },
+      { question: 'When was this appreciation letter issued?', answer: 'The letter was issued on January 10, 2024.' },
+    ],
   },
   {
     id: 'award-best-2076',
@@ -30,6 +40,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/best-construction-company-award-2076.jpg',
     publishDate: '2023-12-20',
     slug: 'best-construction-company-award-2076',
+    faq: [
+      { question: 'What is the Best Construction Company Award 2076?', answer: 'KNSEWA was awarded the Class "C" FCAN Excellence Award for Best Construction Company in 2076 BS, recognizing its commitment to quality and professional standards.' },
+      { question: 'Who presented this award?', answer: 'The award was presented by the Federation of Contractors\' Associations of Nepal (FCAN).' },
+      { question: 'When was this award announced?', answer: 'The award was announced on December 20, 2023.' },
+    ],
   },
   {
     id: 'award-fcan-2076',
@@ -40,6 +55,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/fcan-award-2076.jpg',
     publishDate: '2023-11-15',
     slug: 'fcan-bronze-excellence-award-2076',
+    faq: [
+      { question: 'What is the FCAN Bronze Excellence Award 2076?', answer: 'KNSEWA received the Bronze FCAN Excellence Award, Class "C", in 2076 BS, recognizing demonstrated excellence in construction practices across Nepal.' },
+      { question: 'Who presented this award?', answer: 'The award was presented by the Federation of Contractors\' Associations of Nepal (FCAN).' },
+      { question: 'When was this award received?', answer: 'The award was received on November 15, 2023.' },
+    ],
   },
   {
     id: 'award-fcan-2072',
@@ -50,6 +70,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/fcan-award-2072.jpg',
     publishDate: '2023-10-05',
     slug: 'fcan-bronze-excellence-award-2072',
+    faq: [
+      { question: 'What is the FCAN Bronze Excellence Award 2072?', answer: 'KNSEWA was recognized with the Bronze FCAN Excellence Award, Class "C", in 2072 BS, reflecting the company\'s growing reputation for construction excellence.' },
+      { question: 'Who presented this award?', answer: 'The award was presented by the Federation of Contractors\' Associations of Nepal (FCAN).' },
+      { question: 'When was this award announced?', answer: 'The announcement was made on October 5, 2023.' },
+    ],
   },
   {
     id: 'award-member-elected',
@@ -60,6 +85,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/member-elected-2079.png',
     publishDate: '2023-09-01',
     slug: 'fcan-executive-member-elected-2079',
+    faq: [
+      { question: 'What position was KNSEWA elected to in 2079?', answer: 'Khushbu Nirman Sewa was elected to the FCAN Executive Committee in 2079 BS, strengthening its voice in Nepal\'s construction industry leadership.' },
+      { question: 'What is FCAN?', answer: 'FCAN is the Federation of Contractors\' Associations of Nepal, the national body representing the country\'s construction contractors.' },
+      { question: 'When was this election announced?', answer: 'The election was announced on September 1, 2023.' },
+    ],
   },
   {
     id: 'award-manmohan',
@@ -70,6 +100,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/token-of-love-manmohan-meomorial.jpg',
     publishDate: '2023-08-10',
     slug: 'token-of-love-manmohan-memorial-polytechnic',
+    faq: [
+      { question: 'What recognition did KNSEWA receive from Manmohan Memorial Polytechnic?', answer: 'KNSEWA received a Token of Love from Manmohan Memorial Polytechnic, Budhiganga-4, Morang, for its contribution to educational infrastructure development.' },
+      { question: 'Why was this recognition given?', answer: 'It recognized KNSEWA\'s construction work supporting educational infrastructure at Manmohan Memorial Polytechnic in Morang.' },
+      { question: 'When was this recognition given?', answer: 'The recognition was given on August 10, 2023.' },
+    ],
   },
   {
     id: 'award-member-certificate',
@@ -80,6 +115,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/awards/member-certificate.jpg',
     publishDate: '2023-07-20',
     slug: 'fcan-membership-industry-recognition',
+    faq: [
+      { question: 'What is the FCAN Membership & Industry Recognition?', answer: 'This is KNSEWA\'s official membership certification from the Federation of Contractors\' Associations of Nepal (FCAN), affirming its standing in the national construction sector.' },
+      { question: 'What does FCAN membership represent?', answer: 'FCAN membership certifies a contractor\'s standing and credibility within Nepal\'s national construction industry.' },
+      { question: 'When was this certification issued?', answer: 'The certification was issued on July 20, 2023.' },
+    ],
   },
   {
     id: 'news-infrastructure-project',
@@ -90,6 +130,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/projects/project-1.jpg',
     publishDate: '2024-01-15',
     slug: 'kathmandu-valley-infrastructure-project',
+    faq: [
+      { question: 'What is the Kathmandu Valley Infrastructure Development Project?', answer: 'This project marks a major milestone as KNSEWA began construction on one of the largest infrastructure projects in the Kathmandu Valley, connecting communities across the region.' },
+      { question: 'What is the goal of this project?', answer: 'The project aims to connect key communities across the Kathmandu Valley through new infrastructure development.' },
+      { question: 'When did construction begin?', answer: 'Construction broke ground on January 15, 2024.' },
+    ],
   },
   {
     id: 'news-sustainable-building',
@@ -100,6 +145,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/projects/project-2.jpg',
     publishDate: '2024-01-10',
     slug: 'sustainable-building-practices',
+    faq: [
+      { question: 'What sustainable building practices does KNSEWA use?', answer: 'KNSEWA incorporates eco-friendly materials and construction methods to minimize the environmental impact of its projects.' },
+      { question: 'Why does KNSEWA focus on sustainability?', answer: 'Sustainable practices help reduce the environmental footprint of construction projects while maintaining quality and durability.' },
+      { question: 'When was this announced?', answer: 'This was shared on January 10, 2024.' },
+    ],
   },
   {
     id: 'news-community-development',
@@ -110,6 +160,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/projects/project-1.jpg',
     publishDate: '2023-12-28',
     slug: 'community-development',
+    faq: [
+      { question: 'How does KNSEWA contribute to community development?', answer: 'KNSEWA builds schools and healthcare facilities in rural Nepal as part of its commitment to giving back to the communities it serves.' },
+      { question: 'What types of facilities does KNSEWA build for communities?', answer: 'KNSEWA\'s community development work includes schools and healthcare facilities in rural areas of Nepal.' },
+      { question: 'When was this shared?', answer: 'This was shared on December 28, 2023.' },
+    ],
   },
   {
     id: 'news-safety-protocols',
@@ -120,6 +175,11 @@ export const insightsArticles: NewsArticle[] = [
     image: '/images/projects/project-3.jpg',
     publishDate: '2024-01-05',
     slug: 'new-safety-protocols',
+    faq: [
+      { question: 'What new safety protocols has KNSEWA implemented?', answer: 'KNSEWA has implemented world-class safety standards across all its project sites, aiming for zero-harm operations for every worker.' },
+      { question: 'Why are these safety protocols important?', answer: 'These protocols ensure the safety and wellbeing of every worker across KNSEWA\'s construction sites.' },
+      { question: 'When were these protocols announced?', answer: 'The protocols were announced on January 5, 2024.' },
+    ],
   },
 ];
 

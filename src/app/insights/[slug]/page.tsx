@@ -9,6 +9,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { AnimatedElement } from '@/components/ui/AnimatedElement';
 import { CTASection } from '@/components/sections/CTASection';
 import { ArticleShareBar } from '@/components/sections/insights/ArticleShareBar';
+import { ServiceFAQSection } from '@/components/sections/services/ServiceFAQSection';
 import type { NewsArticle } from '@/types/content';
 
 export function generateStaticParams() {
@@ -208,6 +209,10 @@ export default async function ArticlePage({
           <ArticleShareBar url={`https://knsewa.com/insights/${slug}/`} title={article.title} />
         </div>
       </article>
+
+      {article.faq && article.faq.length > 0 && (
+        <ServiceFAQSection faqs={article.faq} />
+      )}
 
       {related.length > 0 && <RelatedInsights articles={related} />}
 
